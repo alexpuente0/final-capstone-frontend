@@ -2,6 +2,7 @@ import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
+import ReservationsPage from './pages/ReservationsPage';
 
 function App() {
   return (
