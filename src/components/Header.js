@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { currentUser, login, logout } from '../redux/auth/auth';
+import { getReserv } from '../redux/reserv/reserv';
 import store from '../redux/configureStore';
 
 const doCurrent = () => {
@@ -16,6 +17,10 @@ const doLogout = () => {
   store.dispatch(logout());
 };
 
+const doGetReserv = () => {
+  store.dispatch(getReserv());
+};
+
 const Header = () => (
   <header>
     <nav>
@@ -26,6 +31,8 @@ const Header = () => (
       <NavLink onClick={doCurrent} to="/">Current User</NavLink>
       &nbsp;
       <NavLink onClick={doLogout} to="/">Logout</NavLink>
+      &nbsp;
+      <NavLink onClick={doGetReserv} to="/Reservations">Reservations</NavLink>
       <br />
       <br />
       <hr />

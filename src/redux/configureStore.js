@@ -4,6 +4,7 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import { setStore } from '../helpers/fetch-wrapper';
 import { authActions, authReducer } from './auth/auth';
+import { reservReducer } from './reserv/reserv';
 
 const middleware = [thunk];
 if (process.env.NODE_ENV !== 'production') {
@@ -13,6 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
 const store = configureStore({
   reducer: {
     auth: authReducer,
+    reservations: reservReducer,
   },
   middleware: [thunk, logger],
 });
