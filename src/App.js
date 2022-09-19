@@ -10,8 +10,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          {/* <Route path="reservations" element={<ReservationsPage />} />
-          <Route path="/reservations/add" element={<ReservationsAddPage />} />
+          <Route path="/reservations" element={<ReservationsPage />} />
+          {/* <Route path="/reservations/add" element={<ReservationsAddPage />} />
           <Route path="/" element={<ItemsAddPage />} />
           <Route path="/" element={<ItemsDeletePage />} /> */}
         </Routes>
