@@ -2,6 +2,7 @@ import { useSelector, shallowEqual } from 'react-redux';
 
 function ReservationsPage() {
   const reservations = useSelector((state) => state.reservations.reservations, shallowEqual);
+  console.log(reservations);
   return (
     <>
       <h1>Reservations Page</h1>

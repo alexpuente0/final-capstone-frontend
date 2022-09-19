@@ -4,7 +4,7 @@ const baseUrl = `${process.env.REACT_APP_API_URL}`;
 
 export const getReserv = () => async (dispatch) => {
   const payload = {
-    reservations: await fetchWrapper.post(`${baseUrl}/reservations`),
+    reservations: await fetchWrapper.get(`${baseUrl}/reservations`),
     error: null,
   };
 
@@ -12,7 +12,7 @@ export const getReserv = () => async (dispatch) => {
 };
 
 const initialState = () => ({
-  user: [],
+  reservations: [],
   error: null,
 });
 
