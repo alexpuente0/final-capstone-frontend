@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import ReservationsPage from './pages/ReservationsPage';
+import ItemDetailPage from './pages/ItemDetailPage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/reservations" element={<ReservationsPage />} />
+          <Route path="/items/:id" element={<ItemDetailPage />} />
           {/* <Route path="/reservations/add" element={<ReservationsAddPage />} />
           <Route path="/" element={<ItemsAddPage />} />
           <Route path="/" element={<ItemsDeletePage />} /> */}
