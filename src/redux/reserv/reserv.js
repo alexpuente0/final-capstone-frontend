@@ -13,7 +13,7 @@ export const getReserv = () => async (dispatch) => {
 
 const initialState = () => ({
   reservations: [],
-  error: null,
+  loading: false,
 });
 
 export const reservReducer = (state = initialState, action) => {
