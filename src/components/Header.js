@@ -17,7 +17,6 @@ const doLogout = () => {
   store.dispatch(logout());
 };
 
-
 const doGetItemDets = () => {
   store.dispatch(getItemDetails(2)); // 2 harcoded for the id of the item
 };
