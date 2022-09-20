@@ -37,9 +37,9 @@ const Header = () => (
       &nbsp;
       <NavLink onClick={doLogout} to="/">Logout</NavLink>
       &nbsp;
-      <NavLink onClick={doGetReserv} to="/Reservations">Reservations</NavLink>
+      <NavLink onClick={doGetReserv} to="/reservations">Reservations</NavLink>
       &nbsp;
-      <NavLink onClick={doGetItemDets} to="/Items">Items</NavLink>
+      <NavLink onClick={doGetItemDets} to="/items">Items</NavLink>
       <br />
       <br />
       <hr />
