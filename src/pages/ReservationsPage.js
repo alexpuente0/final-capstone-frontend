@@ -1,12 +1,19 @@
+// import { useEffect } from 'react';
 import { useSelector, shallowEqual } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { getReserv } from '../redux/reserv/reserv';
 import store from '../redux/configureStore';
 
 function ReservationsPage() {
+// const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(getReserv());
+  // }, [dispatch]);
+
   const user = useSelector((state) => state.auth.user, shallowEqual);
   let reservations = useSelector((state) => state.reservations.reservations, shallowEqual);
-  if (user === null) {
+  if (user == null || user.name === undefined) {
     return <Navigate replace to="/login" />;
   }
   if (reservations === undefined) store.dispatch(getReserv());
