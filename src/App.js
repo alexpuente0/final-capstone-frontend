@@ -4,6 +4,7 @@ import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import ReservationsPage from './pages/ReservationsPage';
 import LoginPage from './pages/LoginPage';
+import ItemDetailPage from './pages/ItemDetailPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/reservations" element={<ReservationsPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/items/:id" element={<ItemDetailPage />} />
           {/* <Route path="/reservations/add" element={<ReservationsAddPage />} />
           <Route path="/" element={<ItemsAddPage />} />
           <Route path="/" element={<ItemsDeletePage />} /> */}
