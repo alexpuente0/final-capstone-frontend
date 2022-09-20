@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/reservations" element={<ReservationsPage />} />
-          <Route path="/items" element={<ItemDetailPage />} />
+          <Route path="/items/:id" element={<ItemDetailPage />} />
           {/* <Route path="/reservations/add" element={<ReservationsAddPage />} />
           <Route path="/" element={<ItemsAddPage />} />
           <Route path="/" element={<ItemsDeletePage />} /> */}

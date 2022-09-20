@@ -1,34 +1,35 @@
 import { useSelector, shallowEqual } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 function ItemDetailPage() {
+  const navigate = useNavigate();
+
   const item = useSelector((state) => state.items.itemDetails, shallowEqual);
   console.log(item);
   let codefragment = null;
-  if (item === undefined || item === []) {
-    codefragment = (
-      <h1>No Items</h1>
-    );
-  } else {
-    codefragment = (
-      <>
-        <h1>Specific Item Page</h1>
-        <ul className="itemtable">
-          <li className="listitem">
-            <span>Item</span>
-            <span>Description</span>
-            <span>Photo</span>
-            <span>Range</span>
-          </li>
-          <li key={item.id} className="listitem">
-            <span>{item.name}</span>
-            <span>{item.description}</span>
-            <span>{item.photo}</span>
-            <span>{item.range}</span>
-          </li>
-        </ul>
-      </>
-    );
-  }
+  codefragment = item === undefined || item === [] ? (
+    <h1>No Items</h1>
+  ) : (
+    <>
+      <h1>Specific Item Page</h1>
+      <img src={item.photo} alt={item.name} />
+      <h2>{item.name}</h2>
+      <br />
+      <p>
+        Description:
+        <br />
+        {item.description}
+      </p>
+      <p>
+        Range:
+        {item.range}
+      </p>
+
+      <button type="button" onClick={() => navigate('/reservations')}>Reserve this Car</button>
+
+      <button type="button">Delete</button>
+    </>
+  );
   return codefragment;
 }
 

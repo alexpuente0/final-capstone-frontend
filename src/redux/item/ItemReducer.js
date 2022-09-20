@@ -16,9 +16,9 @@ export const getItems = () => async (dispatch) => {
   dispatch({ type: GET_ITEMS, payload });
 };
 
-export const getItemDetails = () => async (dispatch) => {
+export const getItemDetails = (id) => async (dispatch) => {
   const payload = {
-    itemDetails: await fetchWrapper.get(`${baseUrl}/2`),
+    itemDetails: await fetchWrapper.get(`${baseUrl}/${id}`),
     error: null,
   };
   dispatch({ type: GET_ITEM_DETAILS, payload });

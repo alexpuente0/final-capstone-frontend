@@ -23,7 +23,7 @@ const doGetReserv = () => {
 };
 
 const doGetItemDets = () => {
-  store.dispatch(getItemDetails());
+  store.dispatch(getItemDetails(2)); // 2 harcoded for the id of the item
 };
 
 const Header = () => (
@@ -39,7 +39,7 @@ const Header = () => (
       &nbsp;
       <NavLink onClick={doGetReserv} to="/reservations">Reservations</NavLink>
       &nbsp;
-      <NavLink onClick={doGetItemDets} to="/items">Items</NavLink>
+      <NavLink onClick={doGetItemDets} to="/items/2">Items</NavLink>
       <br />
       <br />
       <hr />
