@@ -1,48 +1,48 @@
-/* eslint-disable react/destructuring-assignment */
-import React from 'react';
+/* eslint-disable react/jsx-props-no-spreading */
+import { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import history from '../helpers/history';
 import { login } from '../redux/auth/auth';
-import store from '../redux/configureStore';
 import './login.css';
 
-class LoginPage extends React.Component {
-  constructor(props) {
-    super(props);
+function LoginPage() {
+  const dispatch = useDispatch();
+  const { register, handleSubmit } = useForm();
 
-    this.state = {
-      fields: {},
-    };
+  const authUser = useSelector((state) => state.auth.user);
+  const authError = useSelector((state) => state.auth.error);
+
+  useEffect(() => {
+    // redirect to home if already logged in
+    if (authUser) history.navigate('/');
+  }, [authUser]);
+
+  function onSubmit({ email, password }) {
+    return dispatch(login(email, password));
   }
 
-  handleChange(field, e) {
-    const { fields } = this.state;
-    fields[field] = e.target.value;
-    this.setState({ fields });
-  }
-
-  processForm = (e) => {
-    e.preventDefault();
-    store.dispatch(login(this.state.fields.email, this.state.fields.password));
-    this.render();
-  };
-
-  render() {
-    return (
-      <div className="loginpage">
-        <h1>Login</h1>
-        <div className="centered">
-          <form className="myform" onSubmit={this.processForm.bind(this)}>
-            <input className="formitem" type="email" id="email" name="email" placeholder="Email" onChange={this.handleChange.bind(this, 'email')} value={this.state.fields.email} required minLength="5" maxLength="30" />
-            <input className="formitem" type="password" id="password" name="password" placeholder="Password" onChange={this.handleChange.bind(this, 'password')} value={this.state.fields.password} required minLength="5" maxLength="30" />
-            <div className="button-wrapper">
-              &nbsp;
-              <button className="sbutton" type="submit">Submit</button>
-              &nbsp;
-            </div>
-          </form>
-        </div>
+  return (
+    <div className="loginpage">
+      <h1>Login</h1>
+      <div className="centered">
+        <form className="myform" onSubmit={handleSubmit(onSubmit)}>
+          <div className="form-group">
+            <input className="formitem" type="text" {...register('email')} id="email" name="email" placeholder="Email" required minLength="2" maxLength="30" />
+          </div>
+          <div className="form-group">
+            <input className="formitem" type="password" {...register('password')} id="password" name="password" placeholder="Password" required />
+          </div>
+          <div className="button-wrapper">
+            &nbsp;
+            <button className="sbutton" type="submit">Submit</button>
+            &nbsp;
+          </div>
+          {authError && <div className="alert alert-danger mt-3 mb-0">{authError.message}</div>}
+        </form>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default LoginPage;
