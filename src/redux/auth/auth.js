@@ -1,4 +1,5 @@
 import { fetchWrapper } from '../../helpers/fetch-wrapper';
+import history from '../../helpers/history';
 
 const LOGIN = 'drive-a-green/auth/login';
 const CURRENT = 'drive-a-green/auth/current';
@@ -21,11 +22,13 @@ export const login = (email, password) => async (dispatch) => {
     error: null,
   };
 
+  localStorage.setItem('user', JSON.stringify(payload.user));
   dispatch({ type: LOGIN, payload });
 };
 
 export const logout = () => async (dispatch) => {
   await fetchWrapper.delete(`${baseUrl}/logout`);
+  localStorage.removeItem('user');
   const payload = {
     user: null,
     error: null,
@@ -36,7 +39,7 @@ export const logout = () => async (dispatch) => {
 
 const initialState = () => ({
   // initialize state from local storage to enable user to stay logged in
-  user: {},
+  user: JSON.parse(localStorage.getItem('user')),
   error: null,
 });
 
@@ -45,6 +48,9 @@ export const authActions = { currentUser, login, logout };
 export const authReducer = (state = initialState(), action) => {
   switch (action.type) {
     case LOGIN: {
+      // get return url from location state or default to home page
+      const { from } = history.location.state || { from: { pathname: '/' } };
+      history.navigate(from);
       return action.payload;
     }
 
@@ -54,6 +60,7 @@ export const authReducer = (state = initialState(), action) => {
     }
 
     case LOGOUT:
+      history.navigate('/login');
       return action.payload;
 
     default:
