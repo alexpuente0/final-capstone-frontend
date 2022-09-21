@@ -22,7 +22,7 @@ function ReservationsPage() {
         </li>
         {reservations.map((reservation) => (
           <li key={reservation.id} className="listitem">
-            <span>{reservation.item_id}</span>
+            <span>{reservation.carname}</span>
             <span>{reservation.city}</span>
             <span>{reservation.date}</span>
           </li>
