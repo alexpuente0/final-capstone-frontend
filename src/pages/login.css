@@ -1,0 +1,40 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.loginpage {
+  padding: 10px;
+  background-color: rgb(62, 236, 62);
+  min-height: 100vh;
+}
+
+.centered {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.formitem {
+  border: 0;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  width: 130px;
+}
+
+.sbutton {
+  border: 0;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  width: 130px;
+}
