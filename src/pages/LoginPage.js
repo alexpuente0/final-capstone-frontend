@@ -22,6 +22,7 @@ class LoginPage extends React.Component {
   processForm = (e) => {
     e.preventDefault();
     store.dispatch(login(this.state.fields.email, this.state.fields.password));
+    this.render();
   };
 
   render() {
