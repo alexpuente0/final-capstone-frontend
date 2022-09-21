@@ -23,7 +23,7 @@ function App() {
         <Route path="/reservations" element={<PrivateRoute><ReservationsPage /></PrivateRoute>} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/items/:id" element={<ItemDetailPage />} />
-        <Route path="/new" element={<NewItemPage />} />
+        <Route path="/new" element={<PrivateRoute><NewItemPage /></PrivateRoute>} />
         {/* <Route path="/reservations/add" element={<ReservationsAddPage />} />
         <Route path="/" element={<ItemsAddPage />} />
         <Route path="/" element={<ItemsDeletePage />} /> */}

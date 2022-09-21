@@ -12,9 +12,14 @@ function NewItemPage() {
   function onSubmit({
     name, description, range, photo,
   }) {
-    return dispatch(addItem({
-      name, description, range, photo,
-    }));
+    return dispatch(
+      addItem({
+        name,
+        description,
+        range,
+        photo,
+      }),
+    );
   }
 
   return (
