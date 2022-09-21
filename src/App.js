@@ -9,11 +9,8 @@ import HomePage from './pages/HomePage';
 import ItemDetailPage from './pages/ItemDetailPage';
 import LoginPage from './pages/LoginPage';
 import ReservationsPage from './pages/ReservationsPage';
-<<<<<<< HEAD
 import ReservationsAddPage from './pages/ReservationsAddPage';
-=======
 import NewItemPage from './pages/NewItemPage';
->>>>>>> dev
 
 function App() {
   history.navigate = useNavigate();
