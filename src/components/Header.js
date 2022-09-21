@@ -28,6 +28,8 @@ const Header = () => (
       &nbsp;
       <NavLink to="/reservations">Reservations</NavLink>
       &nbsp;
+      <NavLink to="/reservations/add">New Reservation</NavLink>
+      &nbsp;
       <NavLink onClick={doGetItemDets} to="/items/2">
         Items
       </NavLink>
