@@ -14,8 +14,11 @@ function LoginPage() {
   const authError = useSelector((state) => state.auth.error);
 
   useEffect(() => {
-    // redirect to home if already logged in
-    if (authUser) history.navigate('/');
+    // redirect to from if already logged in
+    if (authUser) {
+      const { from } = history.location.state || { from: { pathname: '/' } };
+      history.navigate(from);
+    }
   }, [authUser]);
 
   function onSubmit({ email, password }) {

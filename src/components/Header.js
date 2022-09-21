@@ -22,11 +22,19 @@ const Header = () => (
       <br />
       <NavLink onClick={doCurrent} to="/">Current User</NavLink>
       &nbsp;
-      <NavLink onClick={doLogout} to="/">Logout</NavLink>
+      <NavLink onClick={doLogout} to="/">
+        Logout
+      </NavLink>
       &nbsp;
       <NavLink to="/reservations">Reservations</NavLink>
       &nbsp;
-      <NavLink onClick={doGetItemDets} to="/items/2">Items</NavLink>
+      <NavLink onClick={doGetItemDets} to="/items/2">
+        Items
+      </NavLink>
+      &nbsp;
+      <NavLink to="/new">
+        Add a New Car
+      </NavLink>
       <br />
       <br />
       <hr />

@@ -48,9 +48,6 @@ export const authActions = { currentUser, login, logout };
 export const authReducer = (state = initialState(), action) => {
   switch (action.type) {
     case LOGIN: {
-      // get return url from location state or default to home page
-      const { from } = history.location.state || { from: { pathname: '/' } };
-      history.navigate(from);
       return action.payload;
     }
 

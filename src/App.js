@@ -9,7 +9,11 @@ import HomePage from './pages/HomePage';
 import ItemDetailPage from './pages/ItemDetailPage';
 import LoginPage from './pages/LoginPage';
 import ReservationsPage from './pages/ReservationsPage';
+<<<<<<< HEAD
 import ReservationsAddPage from './pages/ReservationsAddPage';
+=======
+import NewItemPage from './pages/NewItemPage';
+>>>>>>> dev
 
 function App() {
   history.navigate = useNavigate();
@@ -23,6 +27,7 @@ function App() {
         <Route path="/reservations" element={<PrivateRoute><ReservationsPage /></PrivateRoute>} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/items/:id" element={<ItemDetailPage />} />
+        <Route path="/new" element={<PrivateRoute><NewItemPage /></PrivateRoute>} />
         <Route path="/reservations/add" element={<PrivateRoute><ReservationsAddPage /></PrivateRoute>} />
         {/* <Route path="/" element={<ItemsAddPage />} />
         <Route path="/" element={<ItemsDeletePage />} /> */}
