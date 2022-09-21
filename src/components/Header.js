@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { currentUser, logout } from '../redux/auth/auth';
 import store from '../redux/configureStore';
-import { getItemDetails } from '../redux/item/ItemReducer';
+import { getItemDetails } from '../redux/item/itemReducer';
 
 const doCurrent = () => {
   store.dispatch(currentUser());

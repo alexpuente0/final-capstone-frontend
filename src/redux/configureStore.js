@@ -4,8 +4,8 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import { setStore } from '../helpers/fetch-wrapper';
 import { authActions, authReducer } from './auth/auth';
+import { itemReducer } from './item/itemReducer';
 import { reservReducer } from './reserv/reserv';
-import { itemReducer } from './item/ItemReducer';
 
 const middleware = [thunk];
 if (process.env.NODE_ENV !== 'production') {
