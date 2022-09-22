@@ -14,52 +14,41 @@ function ItemDetailPage() {
   }, [dispatch, id]);
 
   const authUser = useSelector((state) => state.auth.user);
-  const item = useSelector((state) => state.items.itemDetails, shallowEqual);
-  let codefragment = null;
-  let buttonfragment = null;
+  const item = useSelector((state) => state.items.current, shallowEqual);
 
-  function onDelete(id) {
-    return dispatch(removeItem(id))
-      .then(() => navigate('/'));
-  }
+  const showOn = (condition) => ((condition) ? '' : 'hidden');
 
-  buttonfragment = !authUser ? (
-    <div>
-      <button type="button" onClick={() => navigate('/reservations')}>
-        Reserve this Car
-      </button>
-    </div>
-  ) : (
-    <div>
-      <button type="button" onClick={() => navigate('/reservations')}>
-        Reserve this Car
-      </button>
-      <button type="button" onClick={() => onDelete(item.id)}>
-        Delete
-      </button>
-    </div>
-  );
+  const addReservation = () => navigate(`/reservations/add/${item.id}`);
+  const deleteItem = (id) => dispatch(removeItem(id)).then(() => navigate('/'));
 
-  codefragment = item === undefined || item === [] ? (
-    <h1>No Items</h1>
-  ) : (
+  return (
     <>
-      <h1>{item.name}</h1>
-      <img src={item.photo} alt={item.name} />
-      <p>
-        Description:
-        <br />
-        {item.description}
-      </p>
-      <p>
-        Range:
-        {item.range}
-        {item.active}
-      </p>
-      {buttonfragment}
+      <h1 className={`${showOn(!item)}`}>No Items</h1>
+      <span className={`${showOn(item)}`}>
+        <h1>{item.name}</h1>
+        <img src={item.photo} alt={item.name} />
+        <p>
+          Description:
+          <br />
+          {item.description}
+        </p>
+        <p>
+          Range:
+          {item.range}
+          {item.active}
+        </p>
+
+        <div>
+          <button type="button" onClick={addReservation}>
+            Reserve this Car
+          </button>
+          <button type="button" className={`${showOn(authUser)}`} onClick={deleteItem(item.id)}>
+            Delete
+          </button>
+        </div>
+      </span>
     </>
   );
-  return codefragment;
 }
 
 export default ItemDetailPage;
