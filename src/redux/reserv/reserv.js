@@ -4,7 +4,7 @@ const baseUrl = `${process.env.REACT_APP_API_URL}`;
 
 export const addReservation = (item, city, date) => async (dispatch) => {
   const response = await fetchWrapper.post(`${baseUrl}/reservations/`, { reservation: { item, city, date } });
-  if (response.status === 201) {
+  if (response.id) {
     const payload = {
       id: response.id,
       city: response.city,
@@ -22,16 +22,16 @@ export const addReservation = (item, city, date) => async (dispatch) => {
 export const getReserv = () => async (dispatch) => {
   const payload = {
     reservations: await fetchWrapper.get(`${baseUrl}/reservations`),
-    error: null,
+    loading: true,
   };
 
   dispatch({ type: 'GET_RESERV', payload });
 };
 
-const initialState = () => ({
+const initialState = {
   reservations: [],
   loading: false,
-});
+};
 
 export const reservReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -40,7 +40,8 @@ export const reservReducer = (state = initialState, action) => {
     }
 
     case 'NEW_RESERV': {
-      const newstate = state.push(action.payload);
+      // eslint-disable-next-line max-len
+      const newstate = { ...state, reservations: [...state.reservations, action.payload] };
       return newstate;
     }
 
