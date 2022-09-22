@@ -52,15 +52,21 @@ export const itemReducer = (state = initialState(), action) => {
     }
 
     case GET_ITEM_DETAILS: {
-      return action.payload;
+      const current = action.payload.itemDetails;
+      const carsList = state.items.filter((item) => item.id !== current.id);
+      return { error: null, items: [...carsList, current], current };
     }
 
     case ADD_ITEM: {
-      return action.payload;
+      const car = action.payload.items;
+      const carsList = state.items;
+      return { error: null, items: [...carsList, car] };
     }
 
     case REMOVE_ITEM: {
-      return action.payload;
+      const car = action.payload.items;
+      const carsList = state.items;
+      return { error: null, items: [...carsList.filter((item) => item.id !== car.id)] };
     }
 
     default:
