@@ -11,10 +11,22 @@ function HomePage() {
   }, [dispatch]);
 
   const cars = useSelector((state) => state.items.items, shallowEqual) || [];
+  const authUser = useSelector((state) => state.auth.user);
 
   return (
     <>
-      <h1>Home Page</h1>
+      {authUser ? (
+        <h1>
+          {' '}
+          Hello,
+          {' '}
+          {authUser.name}
+          !
+          {' '}
+        </h1>
+      ) : (
+        <h1> Welcome to Rent a Green! </h1>
+      )}
       <CarList cars={cars} />
     </>
   );
