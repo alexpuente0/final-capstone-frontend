@@ -24,13 +24,13 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/reservations">Reservations</NavLink>
+            <NavLink to="/reservations">My Reservations</NavLink>
           </li>
           <li>
             <NavLink to="/reservations/add">New Reservation</NavLink>
           </li>
           <li>
-            <NavLink to="/delete">Delete a Green</NavLink>
+            <NavLink to="/delete">Delete Green</NavLink>
           </li>
           <li>
             <NavLink to="/new">New Green</NavLink>
@@ -38,13 +38,13 @@ const Header = () => {
           {authUser ? (
             <li>
               <NavLink onClick={doLogout} to="/">
-                Logout
+                Log Out
               </NavLink>
             </li>
           ) : (
             <>
               <li>
-                <NavLink to="/login">Login</NavLink>
+                <NavLink to="/login">Log In</NavLink>
               </li>
               <li>
                 <NavLink to="/signup">Sign Up</NavLink>
