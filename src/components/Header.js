@@ -16,11 +16,7 @@ const Header = () => (
       <h2>This is the header</h2>
       <br />
       <NavLink onClick={doCurrent} to="/">
-        Current User
-      </NavLink>
-      &nbsp;
-      <NavLink onClick={doLogout} to="/">
-        Logout
+        Home
       </NavLink>
       &nbsp;
       <NavLink to="/reservations">Reservations</NavLink>
@@ -34,6 +30,10 @@ const Header = () => (
       <NavLink to="/login">Login</NavLink>
       &nbsp;
       <NavLink to="/signup">Signup</NavLink>
+      &nbsp;
+      <NavLink onClick={doLogout} to="/">
+        Logout
+      </NavLink>
       <br />
       <br />
       <hr />
