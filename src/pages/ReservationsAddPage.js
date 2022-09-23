@@ -1,10 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, shallowEqual, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getItems } from '../redux/item/itemReducer';
 import { addReservation } from '../redux/reserv/reserv';
+import history from '../helpers/history';
 import './addReserv.css';
 
 function ReservationsAddPage() {
@@ -15,6 +16,14 @@ function ReservationsAddPage() {
     dispatch(getItems());
   }, [dispatch]);
 
+  const [redirect, setRedirect] = useState(false);
+  useEffect(() => {
+    // redirect to reservations after successful submit
+    if (redirect) {
+      history.navigate('/reservations');
+    }
+  }, [redirect]);
+
   const cars = useSelector(
     (state) => state.items.items.filter((item) => (!id || item.id.toString() === id)), shallowEqual,
   ) || [];
@@ -22,6 +31,7 @@ function ReservationsAddPage() {
   const { register, handleSubmit } = useForm();
 
   function onSubmit({ item, city, date }) {
+    setRedirect(true);
     return dispatch(addReservation(item, city, date));
   }
 

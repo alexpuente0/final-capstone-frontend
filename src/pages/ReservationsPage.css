@@ -1,0 +1,51 @@
+
+.reservtable {
+  margin: 10px;
+  padding: 0;
+}
+
+.listitem {
+  padding: 5px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.listitem:nth-child(odd) {
+  background-color: white;
+}
+
+.listitem:nth-child(even) {
+  background-color: rgb(184, 182, 202);
+}
+
+.listitem:nth-child(1) {
+  border-radius: 5px;
+  border: 0;
+  background-color: rgb(148, 146, 163);
+  font-weight: bold;
+}
+
+.listitem:last-child {
+  border-radius: 5px;
+  border: 0;
+}
+
+.tablewrapper {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.spancentered {
+  text-align: center;
+  width: 30%;
+}
+
+.fixedwidth {
+  width: 30%;
+}
+
+.smallfont {
+  font-size: 0.875rem;
+}
