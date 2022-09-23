@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { currentUser, logout } from '../redux/auth/auth';
 import store from '../redux/configureStore';
-import { getItemDetails } from '../redux/item/itemReducer';
 
 const doCurrent = () => {
   store.dispatch(currentUser());
@@ -9,10 +8,6 @@ const doCurrent = () => {
 
 const doLogout = () => {
   store.dispatch(logout());
-};
-
-const doGetItemDets = () => {
-  store.dispatch(getItemDetails(2)); // 2 harcoded for the id of the item
 };
 
 const Header = () => (
@@ -30,9 +25,7 @@ const Header = () => (
       &nbsp;
       <NavLink to="/reservations/add">New Reservation</NavLink>
       &nbsp;
-      <NavLink onClick={doGetItemDets} to="/items/2">
-        Items
-      </NavLink>
+      <NavLink to="/delete">Delete a Green</NavLink>
       &nbsp;
       <NavLink to="/new">
         Add a New Car
