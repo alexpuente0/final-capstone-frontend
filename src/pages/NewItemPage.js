@@ -1,11 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import UploadFile from '../components/UploadFile';
 import { fileName, UploadImage } from '../helpers/uploadImage';
 import { addItem } from '../redux/item/itemReducer';
+import history from '../helpers/history';
 
 function NewItemPage() {
   const dispatch = useDispatch();
@@ -13,7 +14,15 @@ function NewItemPage() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [progress, setProgress] = useState(0);
 
+  const [redirect, setRedirect] = useState(false);
+  useEffect(() => {
+    if (redirect) {
+      history.navigate('/');
+    }
+  }, [redirect]);
+
   const onSubmit = (item) => {
+    setRedirect(true);
     const name = item.name.trim();
     const description = item.description.trim();
     const range = item.range.trim();
