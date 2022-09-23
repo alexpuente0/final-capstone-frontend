@@ -15,7 +15,9 @@ const Header = () => (
     <nav>
       <h2>This is the header</h2>
       <br />
-      <NavLink onClick={doCurrent} to="/">Current User</NavLink>
+      <NavLink onClick={doCurrent} to="/">
+        Current User
+      </NavLink>
       &nbsp;
       <NavLink onClick={doLogout} to="/">
         Logout
@@ -27,9 +29,11 @@ const Header = () => (
       &nbsp;
       <NavLink to="/delete">Delete a Green</NavLink>
       &nbsp;
-      <NavLink to="/new">
-        Add a New Car
-      </NavLink>
+      <NavLink to="/new">Add a New Car</NavLink>
+      &nbsp;
+      <NavLink to="/login">Login</NavLink>
+      &nbsp;
+      <NavLink to="/signup">Signup</NavLink>
       <br />
       <br />
       <hr />
