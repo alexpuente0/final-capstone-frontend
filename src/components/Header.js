@@ -27,13 +27,13 @@ const Header = () => {
             <NavLink to="/reservations">My Reservations</NavLink>
           </li>
           <li>
-            <NavLink to="/reservations/add">New Reservation</NavLink>
-          </li>
-          <li>
-            <NavLink to="/delete">Delete Green</NavLink>
+            <NavLink to="/reservations/add">Reserve Green</NavLink>
           </li>
           <li>
             <NavLink to="/new">New Green</NavLink>
+          </li>
+          <li>
+            <NavLink to="/delete">Delete Green</NavLink>
           </li>
           {authUser ? (
             <li>
