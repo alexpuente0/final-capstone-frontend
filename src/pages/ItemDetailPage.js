@@ -18,10 +18,9 @@ function ItemDetailPage() {
 
   const showOn = (condition) => ((condition) ? '' : 'hidden');
 
-  const addReservation = () => navigate(`/reservations/add/${item.id}`);
   const deleteItem = (id) => dispatch(removeItem(id)).then(() => navigate('/'));
 
-  return (
+  return !!item && (
     <>
       <h1 className={`${showOn(!item)}`}>No Items</h1>
       <span className={`${showOn(item)}`}>
@@ -39,10 +38,10 @@ function ItemDetailPage() {
         </p>
 
         <div>
-          <button type="button" onClick={addReservation}>
+          <button type="button" onClick={() => navigate(`/reservations/add/${item.id}`)}>
             Reserve this Car
           </button>
-          <button type="button" className={`${showOn(authUser)}`} onClick={deleteItem(item.id)}>
+          <button type="button" className={`${showOn(authUser)}`} onClick={() => deleteItem(item.id)}>
             Delete
           </button>
         </div>
