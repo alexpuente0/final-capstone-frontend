@@ -17,36 +17,41 @@ const Header = () => {
   return (
     <header>
       <nav>
-        <h2>This is the header</h2>
-        <br />
-        <NavLink onClick={doCurrent} to="/">
-          Home
-        </NavLink>
-        &nbsp;
-        <NavLink to="/reservations">Reservations</NavLink>
-        &nbsp;
-        <NavLink to="/reservations/add">New Reservation</NavLink>
-        &nbsp;
-        <NavLink to="/delete">Delete a Green</NavLink>
-        &nbsp;
-        <NavLink to="/new">Add a New Car</NavLink>
-        &nbsp;
-        {authUser ? (
-          <NavLink onClick={doLogout} to="/">
-            Logout
-          </NavLink>
-
-        ) : (
-          <>
-            <NavLink to="/login">Login</NavLink>
-            &nbsp; &nbsp;
-            <NavLink to="/signup">Sign Up</NavLink>
-          </>
-        )}
-        <br />
-        <br />
-        <hr />
-        <br />
+        <ul>
+          <li>
+            <NavLink onClick={doCurrent} to="/">
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/reservations">Reservations</NavLink>
+          </li>
+          <li>
+            <NavLink to="/reservations/add">New Reservation</NavLink>
+          </li>
+          <li>
+            <NavLink to="/delete">Delete a Green</NavLink>
+          </li>
+          <li>
+            <NavLink to="/new">New Green</NavLink>
+          </li>
+          {authUser ? (
+            <li>
+              <NavLink onClick={doLogout} to="/">
+                Logout
+              </NavLink>
+            </li>
+          ) : (
+            <>
+              <li>
+                <NavLink to="/login">Login</NavLink>
+              </li>
+              <li>
+                <NavLink to="/signup">Sign Up</NavLink>
+              </li>
+            </>
+          )}
+        </ul>
       </nav>
     </header>
   );
