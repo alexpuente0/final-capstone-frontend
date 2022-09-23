@@ -40,7 +40,6 @@ export const reservReducer = (state = initialState, action) => {
     }
 
     case 'NEW_RESERV': {
-      // eslint-disable-next-line max-len
       const newstate = { ...state, reservations: [...state.reservations, action.payload] };
       return newstate;
     }
