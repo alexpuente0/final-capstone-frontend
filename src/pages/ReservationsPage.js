@@ -11,6 +11,11 @@ function ReservationsPage() {
   }, [dispatch]);
 
   const reservations = useSelector((state) => state.reservations.reservations, shallowEqual) || [];
+  const myreserv = reservations.map((reservation) => {
+    const d = new Date(reservation.date);
+    const reserv = { ...reservation, date: d.toLocaleDateString() };
+    return reserv;
+  });
 
   return (
     <>
@@ -22,7 +27,7 @@ function ReservationsPage() {
             <span className="spancentered">City</span>
             <span className="spancentered">Date</span>
           </li>
-          {reservations.map((reservation) => (
+          {myreserv.map((reservation) => (
             <li key={reservation.id} className="listitem">
               <span className="fixedwidth">{reservation.carname}</span>
               <span className="spancentered">{reservation.city}</span>

@@ -15,6 +15,7 @@ function ReservationsAddPage() {
   useEffect(() => {
     dispatch(getItems());
   }, [dispatch]);
+
   const [redirect, setRedirect] = useState(false);
   useEffect(() => {
     // redirect to reservations after successful submit
