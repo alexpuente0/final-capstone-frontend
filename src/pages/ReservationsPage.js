@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { getReserv } from '../redux/reserv/reserv';
+import './ReservationsPage.css';
 
 function ReservationsPage() {
   const dispatch = useDispatch();
@@ -14,20 +15,22 @@ function ReservationsPage() {
   return (
     <>
       <h1>Reservations Page</h1>
-      <ul className="reservtable">
-        <li className="listitem">
-          <span>Car</span>
-          <span>City</span>
-          <span>Date</span>
-        </li>
-        {reservations.map((reservation) => (
-          <li key={reservation.id} className="listitem">
-            <span>{reservation.carname}</span>
-            <span>{reservation.city}</span>
-            <span>{reservation.date}</span>
+      <div className="tablewrapper">
+        <ul className="reservtable">
+          <li className="listitem">
+            <span className="fixedwidth">Car</span>
+            <span className="spancentered">City</span>
+            <span className="spancentered">Date</span>
           </li>
-        ))}
-      </ul>
+          {reservations.map((reservation) => (
+            <li key={reservation.id} className="listitem">
+              <span className="fixedwidth">{reservation.carname}</span>
+              <span className="spancentered">{reservation.city}</span>
+              <span className="spancentered smallfont">{reservation.date}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }
