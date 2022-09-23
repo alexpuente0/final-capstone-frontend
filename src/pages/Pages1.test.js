@@ -1,5 +1,5 @@
 import React from 'react';
-import { Provider } from 'react-redux';
+import { Provider, shallowEqual, useSelector } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import store from '../redux/configureStore';
@@ -42,7 +42,8 @@ const getReserv = () => async (dispatch) => {
 
 test('ReservationsPage renders correctly for mock data', () => {
   getReserv();
-
+  const reservations = useSelector((state) => state.reservations.reservations, shallowEqual) || [];
+  console.log(reservations[1].carname);
   const tree = renderer
     .create(
       <Provider store={store}>

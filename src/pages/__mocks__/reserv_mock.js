@@ -22,7 +22,7 @@ const payload = {
     },
     {
       id: 103,
-      city: 'Los Angeles',
+      city: 'San Luis',
       date: '2022-10-12T00:00:00Z',
       created_at: '',
       updated_at: '',
