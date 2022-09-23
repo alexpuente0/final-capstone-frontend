@@ -4,6 +4,7 @@ import history from '../../helpers/history';
 const LOGIN = 'drive-a-green/auth/login';
 const CURRENT = 'drive-a-green/auth/current';
 const LOGOUT = 'drive-a-green/auth/logout';
+const SIGNUP = 'drive-a-green/auth/signup';
 
 const baseUrl = `${process.env.REACT_APP_API_URL}/users`;
 
@@ -37,6 +38,15 @@ export const logout = () => async (dispatch) => {
   dispatch({ type: LOGOUT, payload });
 };
 
+export const signup = (name, email, password) => async (dispatch) => {
+  const payload = {
+    user: await fetchWrapper.post(`${baseUrl}/signup`, { user: { name, email, password } }),
+    error: null,
+  };
+
+  dispatch({ type: SIGNUP, payload });
+};
+
 const initialState = () => ({
   // initialize state from local storage to enable user to stay logged in
   user: JSON.parse(localStorage.getItem('user')),
@@ -59,6 +69,10 @@ export const authReducer = (state = initialState(), action) => {
     case LOGOUT:
       history.navigate('/login');
       return action.payload;
+
+    case SIGNUP: {
+      return action.payload;
+    }
 
     default:
       return state;

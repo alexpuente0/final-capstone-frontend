@@ -12,6 +12,7 @@ import NewItemPage from './pages/NewItemPage';
 import ReservationsAddPage from './pages/ReservationsAddPage';
 import ReservationsPage from './pages/ReservationsPage';
 import DeleteItemPage from './pages/DeleteItemPage';
+import SignupPage from './pages/SignupPage';
 
 function App() {
   history.navigate = useNavigate();
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/reservations" element={<PrivateRoute><ReservationsPage /></PrivateRoute>} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
         <Route path="/items/:id" element={<ItemDetailPage />} />
         <Route path="/new" element={<PrivateRoute><NewItemPage /></PrivateRoute>} />
         <Route path="/reservations/add" element={<PrivateRoute><ReservationsAddPage /></PrivateRoute>} />

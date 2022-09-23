@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { currentUser, logout } from '../redux/auth/auth';
 import store from '../redux/configureStore';
 
@@ -10,32 +11,50 @@ const doLogout = () => {
   store.dispatch(logout());
 };
 
-const Header = () => (
-  <header>
-    <nav>
-      <h2>This is the header</h2>
-      <br />
-      <NavLink onClick={doCurrent} to="/">Current User</NavLink>
-      &nbsp;
-      <NavLink onClick={doLogout} to="/">
-        Logout
-      </NavLink>
-      &nbsp;
-      <NavLink to="/reservations">Reservations</NavLink>
-      &nbsp;
-      <NavLink to="/reservations/add">New Reservation</NavLink>
-      &nbsp;
-      <NavLink to="/delete">Delete a Green</NavLink>
-      &nbsp;
-      <NavLink to="/new">
-        Add a New Car
-      </NavLink>
-      <br />
-      <br />
-      <hr />
-      <br />
-    </nav>
-  </header>
-);
+const Header = () => {
+  const authUser = useSelector((state) => state.auth.user);
+
+  return (
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <NavLink onClick={doCurrent} to="/">
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/reservations">My Reservations</NavLink>
+          </li>
+          <li>
+            <NavLink to="/reservations/add">Reserve Green</NavLink>
+          </li>
+          <li>
+            <NavLink to="/new">New Green</NavLink>
+          </li>
+          <li>
+            <NavLink to="/delete">Delete Green</NavLink>
+          </li>
+          {authUser ? (
+            <li>
+              <NavLink onClick={doLogout} to="/">
+                Log Out
+              </NavLink>
+            </li>
+          ) : (
+            <>
+              <li>
+                <NavLink to="/login">Log In</NavLink>
+              </li>
+              <li>
+                <NavLink to="/signup">Sign Up</NavLink>
+              </li>
+            </>
+          )}
+        </ul>
+      </nav>
+    </header>
+  );
+};
 
 export default Header;
