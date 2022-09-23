@@ -2,17 +2,18 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import configureStore from '../redux/configureStore';
-import Header from './Header';
-import Home from './Home';
-import { coinsmock } from '../__mocks__/mock';
+import store from '../redux/configureStore';
+import LoginPage from './LoginPage';
+import ReservationsPage from './ReservationsPage';
+import ReservationsAddPage from './ReservationsAddPage';
+import payload from './__mocks__/reserv_mock';
 
-test('Header renders correctly', () => {
+test('LoginPage renders correctly', () => {
   const tree = renderer
     .create(
-      <Provider store={configureStore}>
+      <Provider store={store}>
         <MemoryRouter>
-          <Header />
+          <LoginPage />
         </MemoryRouter>
       </Provider>,
     )
@@ -21,12 +22,32 @@ test('Header renders correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Home renders correctly for mock data', () => {
+test('ReservationsAddPage renders correctly', () => {
   const tree = renderer
     .create(
-      <Provider store={configureStore}>
+      <Provider store={store}>
         <MemoryRouter>
-          <Home coins={coinsmock} />
+          <ReservationsAddPage />
+        </MemoryRouter>
+      </Provider>,
+    )
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+
+const getReserv = () => async (dispatch) => {
+  dispatch({ type: 'GET_RESERV', payload });
+};
+
+test('ReservationsPage renders correctly for mock data', () => {
+  getReserv();
+
+  const tree = renderer
+    .create(
+      <Provider store={store}>
+        <MemoryRouter>
+          <ReservationsPage />
         </MemoryRouter>
       </Provider>,
     )
