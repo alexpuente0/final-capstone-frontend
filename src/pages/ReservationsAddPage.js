@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, shallowEqual, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { getItems } from '../redux/item/itemReducer';
 import { addReservation } from '../redux/reserv/reserv';
 import history from '../helpers/history';
@@ -9,6 +10,8 @@ import './addReserv.css';
 
 function ReservationsAddPage() {
   const dispatch = useDispatch();
+  const { id } = useParams();
+
   useEffect(() => {
     dispatch(getItems());
   }, [dispatch]);
@@ -20,7 +23,10 @@ function ReservationsAddPage() {
     }
   }, [redirect]);
 
-  const cars = useSelector((state) => state.items.items, shallowEqual) || [];
+  const cars = useSelector(
+    (state) => state.items.items.filter((item) => (!id || item.id.toString() === id)), shallowEqual,
+  ) || [];
+
   const { register, handleSubmit } = useForm();
 
   function onSubmit({ item, city, date }) {

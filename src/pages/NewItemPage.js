@@ -1,26 +1,29 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import UploadFile from '../components/UploadFile';
+import { fileName, UploadImage } from '../helpers/uploadImage';
 import { addItem } from '../redux/item/itemReducer';
 
 function NewItemPage() {
   const dispatch = useDispatch();
-  const { register, handleSubmit } = useForm();
+  const { register, reset, handleSubmit } = useForm();
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [progress, setProgress] = useState(0);
 
-  function onSubmit({
-    name, description, range, photo,
-  }) {
-    return dispatch(
-      addItem({
-        name,
-        description,
-        range,
-        photo,
-      }),
-    );
-  }
+  const onSubmit = (item) => {
+    const name = item.name.trim();
+    const description = item.description.trim();
+    const range = item.range.trim();
+    if (name && description && range && selectedFile) {
+      const item = {
+        name, description, range, photo: fileName(selectedFile),
+      };
+      UploadImage(selectedFile, setProgress, reset, dispatch(addItem(item)));
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -73,19 +76,7 @@ function NewItemPage() {
       </div>
 
       <div>
-        <label htmlFor="photo">
-          Photo:
-          <input
-            className="formitem"
-            type="text"
-            {...register('photo')}
-            id="photo"
-            name="photo"
-            required
-            minLength="2"
-            maxLength="200"
-          />
-        </label>
+        <UploadFile setSelectedFile={setSelectedFile} progress={progress} />
       </div>
 
       <button type="submit">Submit</button>
