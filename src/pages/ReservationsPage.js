@@ -9,7 +9,6 @@ function ReservationsPage() {
   useEffect(() => {
     dispatch(getReserv());
   }, [dispatch]);
-
   const reservations = useSelector((state) => state.reservations.reservations, shallowEqual) || [];
   const myreserv = reservations.map((reservation) => {
     const d = new Date(reservation.date);

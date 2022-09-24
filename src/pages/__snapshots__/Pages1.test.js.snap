@@ -165,6 +165,63 @@ Array [
           Date
         </span>
       </li>
+      <li
+        className="listitem"
+      >
+        <span
+          className="fixedwidth"
+        >
+          Genesis GV60
+        </span>
+        <span
+          className="spancentered"
+        >
+          Mexico DF
+        </span>
+        <span
+          className="spancentered smallfont"
+        >
+          20/9/2022
+        </span>
+      </li>
+      <li
+        className="listitem"
+      >
+        <span
+          className="fixedwidth"
+        >
+          Kia EV6
+        </span>
+        <span
+          className="spancentered"
+        >
+          Buenos Aires
+        </span>
+        <span
+          className="spancentered smallfont"
+        >
+          1/6/2022
+        </span>
+      </li>
+      <li
+        className="listitem"
+      >
+        <span
+          className="fixedwidth"
+        >
+          BMW i4
+        </span>
+        <span
+          className="spancentered"
+        >
+          San Luis
+        </span>
+        <span
+          className="spancentered smallfont"
+        >
+          11/10/2022
+        </span>
+      </li>
     </ul>
   </div>,
 ]
