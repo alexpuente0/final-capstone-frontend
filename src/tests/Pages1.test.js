@@ -3,9 +3,9 @@ import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import store from '../redux/configureStore';
-import LoginPage from './LoginPage';
-import ReservationsPage from './ReservationsPage';
-import ReservationsAddPage from './ReservationsAddPage';
+import LoginPage from '../pages/LoginPage';
+import ReservationsPage from '../pages/ReservationsPage';
+import ReservationsAddPage from '../pages/ReservationsAddPage';
 import payload from './__mocks__/reserv_mock';
 
 test('LoginPage renders correctly', () => {
