@@ -6,7 +6,9 @@ import { act } from 'react-dom/test-utils';
 import userEvent from '@testing-library/user-event';
 // eslint-disable-next-line no-unused-vars
 import { toHaveTextContent } from '@testing-library/jest-dom';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {
+  BrowserRouter, Route, Routes,
+} from 'react-router-dom';
 import configureStore from '../redux/configureStore';
 import LoginPage from '../pages/LoginPage';
 import ReservationsPage from '../pages/ReservationsPage';
