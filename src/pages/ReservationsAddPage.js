@@ -37,9 +37,9 @@ function ReservationsAddPage() {
 
   function MySelect() {
     return (
-      <select className="formitem" id="item" {...register('item')} name="item" placeholder="Car" required>
+      <select className="formitem" data-testid="item" id="item" {...register('item')} name="item" placeholder="Car" required>
         {cars.map((car) => (
-          <option key={car.name} value={car.name}>{car.name}</option>
+          <option data-testid="options" key={car.name} value={car.name}>{car.name}</option>
         ))}
       </select>
     );

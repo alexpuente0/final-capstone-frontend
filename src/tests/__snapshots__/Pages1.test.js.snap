@@ -80,6 +80,7 @@ exports[`ReservationsAddPage renders correctly 1`] = `
       >
         <select
           className="formitem"
+          data-testid="item"
           id="item"
           name="item"
           onBlur={[Function]}
