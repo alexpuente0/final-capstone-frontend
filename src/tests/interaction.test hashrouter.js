@@ -1,12 +1,11 @@
 import { Provider } from 'react-redux';
-import {
-  render, fireEvent, screen, waitFor,
-} from '@testing-library/react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { render, fireEvent, screen } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import userEvent from '@testing-library/user-event';
 // eslint-disable-next-line no-unused-vars
 import { toHaveTextContent } from '@testing-library/jest-dom';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import configureStore from '../redux/configureStore';
 import LoginPage from '../pages/LoginPage';
 import ReservationsPage from '../pages/ReservationsPage';
@@ -17,14 +16,14 @@ describe('Navigation', () => {
   test('add reservation', async () => {
     render(
       <Provider store={configureStore}>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<PrivateRoute><ReservationsAddPage /></PrivateRoute>} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/reservations" element={<ReservationsPage />} />
             <Route path="/reservations/add" element={<PrivateRoute><ReservationsAddPage /></PrivateRoute>} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </Provider>,
     );
 
@@ -36,10 +35,10 @@ describe('Navigation', () => {
     act(() => {
       fireEvent.click(screen.getByText('Submit'));
     });
+    await new Promise((r) => setTimeout(r, 2000));
 
-    await waitFor(() => {
-      expect(screen.getByRole('heading')).toHaveTextContent('Add Reservation');
-    });
+    expect(screen.getByRole('heading')).toHaveTextContent('Add Reservation');
+
     const car = screen.getByTestId('item');
     await fireEvent.change(car, { target: { value: 'Genesis GV60' } });
     const city = screen.getByPlaceholderText('City');
