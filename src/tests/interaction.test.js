@@ -6,26 +6,21 @@ import { act } from 'react-dom/test-utils';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import {
-  BrowserRouter, MemoryRouter, Route, Routes,
+  MemoryRouter, Route, Routes,
 } from 'react-router-dom';
 import configureStore from '../redux/configureStore';
 import LoginPage from '../pages/LoginPage';
 import ReservationsPage from '../pages/ReservationsPage';
 import ReservationsAddPage from '../pages/ReservationsAddPage';
-import PrivateRoute from '../components/PrivateRoute';
+import App from '../App';
 
 describe('Navigation', () => {
-  test('login', async () => {
+  test('login and reserve', async () => {
     render(
       <Provider store={configureStore}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<PrivateRoute><ReservationsAddPage /></PrivateRoute>} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/reservations" element={<ReservationsPage />} />
-            <Route path="/reservations/add" element={<PrivateRoute><ReservationsAddPage /></PrivateRoute>} />
-          </Routes>
-        </BrowserRouter>
+        <MemoryRouter initialEntries={['/reservations/add']}>
+          <App />
+        </MemoryRouter>
       </Provider>,
     );
 
@@ -37,20 +32,6 @@ describe('Navigation', () => {
     act(() => {
       fireEvent.click(screen.getByText('Submit'));
     });
-
-    cleanup();
-
-    render(
-      <Provider store={configureStore}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<ReservationsAddPage />} />
-            <Route path="/reservations" element={<ReservationsPage />} />
-            <Route path="/login" element={<LoginPage />} />
-          </Routes>
-        </BrowserRouter>
-      </Provider>,
-    );
 
     await waitFor(() => {
       expect(screen.getByRole('heading')).toHaveTextContent('Add Reservation');
