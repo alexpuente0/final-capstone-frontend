@@ -20,7 +20,6 @@ function LoginPage() {
     // redirect to from if already logged in
     if (authUser) {
       const { from } = location.state || { from: { pathname: '/' } };
-      console.log(from);
       navigate(from.pathname);
     }
   }, [authUser, location.state, navigate]);

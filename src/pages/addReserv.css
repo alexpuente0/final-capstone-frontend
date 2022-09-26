@@ -2,4 +2,6 @@
   padding: 10px;
   background-color: rgb(62, 236, 62);
   min-height: 100vh;
+  background-image: url('../img/mercedes.jpg');
+  background-size: cover;
 }

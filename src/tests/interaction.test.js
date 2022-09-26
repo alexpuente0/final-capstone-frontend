@@ -49,5 +49,8 @@ describe('Navigation', () => {
     await waitFor(() => {
       expect(screen.getByRole('heading')).toHaveTextContent('Reservations Page');
     }, { options: { timeout: 2000 } });
+    await waitFor(() => {
+      expect(document.getElementsByClassName('listitem')).toHaveLength(7);
+    }, { options: { timeout: 2000 } });
   });
 });
