@@ -42,7 +42,7 @@ function DeleteItem() {
 
   return (
     <>
-      <div>
+      <div className="formcontainer">
         <h1>Delete a Green</h1>
         <div className="centered">
           <form className="myform2" onSubmit={handleSubmit(onSubmit)}>
