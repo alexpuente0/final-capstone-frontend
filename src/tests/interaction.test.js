@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import {
-  render, fireEvent, screen, waitFor,
+  cleanup, render, fireEvent, screen, waitFor,
 } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import userEvent from '@testing-library/user-event';
@@ -37,23 +37,25 @@ describe('Navigation', () => {
     act(() => {
       fireEvent.click(screen.getByText('Submit'));
     });
-  });
-});
 
-describe('Navigation', () => {
-  test('add reservation', async () => {
+    cleanup();
+
     render(
       <Provider store={configureStore}>
-        <MemoryRouter>
+        <BrowserRouter>
           <Routes>
             <Route path="/" element={<ReservationsAddPage />} />
             <Route path="/reservations" element={<ReservationsPage />} />
+            <Route path="/login" element={<LoginPage />} />
           </Routes>
-        </MemoryRouter>
+        </BrowserRouter>
       </Provider>,
     );
 
-    expect(screen.getByRole('heading')).toHaveTextContent('Add Reservation');
+    await waitFor(() => {
+      expect(screen.getByRole('heading')).toHaveTextContent('Add Reservation');
+    }, { options: { timeout: 2000 } });
+
     const car = screen.getByTestId('item');
     await fireEvent.change(car, { target: { value: 'Genesis GV60' } });
     const city = screen.getByPlaceholderText('City');
@@ -65,6 +67,6 @@ describe('Navigation', () => {
     });
     await waitFor(() => {
       expect(screen.getByRole('heading')).toHaveTextContent('Reservations Page');
-    });
+    }, { options: { timeout: 2000 } });
   });
 });
