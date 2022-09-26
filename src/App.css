@@ -7,3 +7,34 @@
 .hidden {
   display: none;
 }
+
+.navbar {
+  display: flex;
+  background-color: greenyellow;
+  text-decoration: none;
+  padding: 15px;
+  list-style: none;
+  justify-content: space-around;
+  height: 60px;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  text-decoration: none; 
+  color: white;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media screen and (max-width: 390px) { 
+  .navbar {
+    position: absolute;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    height: auto;
+    gap: 20px;
+  }
+}
