@@ -1,0 +1,14 @@
+.formcontainer {
+  padding: 10px;
+  background-color: rgb(211, 255, 123);
+  min-height: 100vh;
+}
+
+.formcontainer form {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
