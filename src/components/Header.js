@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { currentUser, logout } from '../redux/auth/auth';
 import store from '../redux/configureStore';
+import '../App.css';
 
 const doCurrent = () => {
   store.dispatch(currentUser());
@@ -17,7 +18,7 @@ const Header = () => {
   return (
     <header>
       <nav>
-        <ul>
+        <ul className="navbar">
           <li>
             <NavLink onClick={doCurrent} to="/">
               Home
