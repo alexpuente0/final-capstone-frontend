@@ -7,6 +7,7 @@ import UploadFile from '../components/UploadFile';
 import { fileName, UploadImage } from '../helpers/uploadImage';
 import { addItem } from '../redux/item/itemReducer';
 import history from '../helpers/history';
+import './NewItemPage.css';
 
 function NewItemPage() {
   const dispatch = useDispatch();
@@ -35,61 +36,63 @@ function NewItemPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label htmlFor="name">
-          Name:
-          <input
-            className="formitem"
-            type="text"
-            {...register('name')}
-            id="name"
-            name="name"
-            required
-            minLength="2"
-            maxLength="30"
-          />
-        </label>
-      </div>
+    <div className="formcontainer">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div>
+          <label htmlFor="name">
+            Name:
+            <input
+              className="formitem"
+              type="text"
+              {...register('name')}
+              id="name"
+              name="name"
+              required
+              minLength="2"
+              maxLength="30"
+            />
+          </label>
+        </div>
 
-      <div>
-        <label htmlFor="description">
-          Description:
-          <input
-            className="formitem"
-            type="text"
-            {...register('description')}
-            id="description"
-            name="description"
-            required
-            minLength="2"
-            maxLength="200"
-          />
-        </label>
-      </div>
+        <div>
+          <label htmlFor="description">
+            Description:
+            <input
+              className="formitem"
+              type="text"
+              {...register('description')}
+              id="description"
+              name="description"
+              required
+              minLength="2"
+              maxLength="200"
+            />
+          </label>
+        </div>
 
-      <div>
-        <label htmlFor="range">
-          Range:
-          <input
-            className="formitem"
-            type="text"
-            {...register('range')}
-            id="range"
-            name="range"
-            required
-            minLength="2"
-            maxLength="200"
-          />
-        </label>
-      </div>
+        <div>
+          <label htmlFor="range">
+            Range:
+            <input
+              className="formitem"
+              type="text"
+              {...register('range')}
+              id="range"
+              name="range"
+              required
+              minLength="2"
+              maxLength="200"
+            />
+          </label>
+        </div>
 
-      <div>
-        <UploadFile setSelectedFile={setSelectedFile} progress={progress} />
-      </div>
+        <div className="upload">
+          <UploadFile setSelectedFile={setSelectedFile} progress={progress} />
+        </div>
 
-      <button type="submit">Submit</button>
-    </form>
+        <button className="sbutton" type="submit">Submit</button>
+      </form>
+    </div>
   );
 }
 
