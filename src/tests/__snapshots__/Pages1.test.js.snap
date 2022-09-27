@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginPage renders correctly 1`] = `
+<div
+  className="loginpage"
+>
+  <h1>
+    Login
+  </h1>
+  <div
+    className="centered"
+  >
+    <form
+      className="myform"
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-group"
+      >
+        <input
+          className="formitem"
+          id="email"
+          maxLength="30"
+          minLength="2"
+          name="email"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Email"
+          required={true}
+          type="text"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <input
+          className="formitem"
+          id="password"
+          name="password"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Password"
+          required={true}
+          type="password"
+        />
+      </div>
+      <div
+        className="button-wrapper"
+      >
+         
+        <button
+          className="sbutton"
+          type="submit"
+        >
+          Submit
+        </button>
+         
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`ReservationsAddPage renders correctly 1`] = `
+<div
+  className="addreservpage"
+>
+  <h1>
+    Add Reservation
+  </h1>
+  <div
+    className="centered"
+  >
+    <form
+      className="myform2"
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-group"
+      >
+        <select
+          className="formitem"
+          data-testid="item"
+          id="item"
+          name="item"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Car"
+          required={true}
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <input
+          className="formitem"
+          id="city"
+          maxLength="30"
+          minLength="2"
+          name="city"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="City"
+          required={true}
+          type="text"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <input
+          className="formitem"
+          id="date"
+          name="date"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Date"
+          required={true}
+          type="date"
+        />
+      </div>
+      <div
+        className="button-wrapper"
+      >
+         
+        <button
+          className="sbutton"
+          type="submit"
+        >
+          Submit
+        </button>
+         
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`ReservationsPage renders correctly for mock data 1`] = `
+Array [
+  <h1>
+    Reservations Page
+  </h1>,
+  <div
+    className="tablewrapper"
+  >
+    <ul
+      className="reservtable"
+    >
+      <li
+        className="listitem"
+      >
+        <span
+          className="fixedwidth"
+        >
+          Car
+        </span>
+        <span
+          className="spancentered"
+        >
+          City
+        </span>
+        <span
+          className="spancentered"
+        >
+          Date
+        </span>
+      </li>
+      <li
+        className="listitem"
+      >
+        <span
+          className="fixedwidth"
+        >
+          Genesis GV60
+        </span>
+        <span
+          className="spancentered"
+        >
+          Mexico DF
+        </span>
+        <span
+          className="spancentered smallfont"
+        >
+          2022-09-21
+        </span>
+      </li>
+      <li
+        className="listitem"
+      >
+        <span
+          className="fixedwidth"
+        >
+          Kia EV6
+        </span>
+        <span
+          className="spancentered"
+        >
+          Buenos Aires
+        </span>
+        <span
+          className="spancentered smallfont"
+        >
+          2022-06-02
+        </span>
+      </li>
+      <li
+        className="listitem"
+      >
+        <span
+          className="fixedwidth"
+        >
+          BMW i4
+        </span>
+        <span
+          className="spancentered"
+        >
+          San Luis
+        </span>
+        <span
+          className="spancentered smallfont"
+        >
+          2022-10-12
+        </span>
+      </li>
+    </ul>
+  </div>,
+]
+`;

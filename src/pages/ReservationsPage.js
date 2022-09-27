@@ -9,11 +9,10 @@ function ReservationsPage() {
   useEffect(() => {
     dispatch(getReserv());
   }, [dispatch]);
-
   const reservations = useSelector((state) => state.reservations.reservations, shallowEqual) || [];
   const myreserv = reservations.map((reservation) => {
-    const d = new Date(reservation.date);
-    const reserv = { ...reservation, date: d.toLocaleDateString() };
+    const dateonly = reservation.date.slice(0, 10);
+    const reserv = { ...reservation, date: dateonly };
     return reserv;
   });
 
