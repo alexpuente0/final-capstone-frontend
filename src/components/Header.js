@@ -33,9 +33,6 @@ const Header = () => {
       >
         <div className="slice" />
 
-        <div className="slice" />
-
-        <div className="slice" />
       </div>
       <nav className={navbar}>
         <ul className="navigator">
