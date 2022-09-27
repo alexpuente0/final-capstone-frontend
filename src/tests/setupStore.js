@@ -12,7 +12,7 @@ const setupStore = () => {
         name: 'Roberto',
         email: 'roberto@mail.com',
         token:
-          'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjYzOTc0NjkwLCJleHAiOjE2NjUyNzA2OTAsImp0aSI6IjA2ZjQxNDNlLThlNzctNGI1Yy1hZGZmLTkxZTY2NmRkYzkyNyJ9.xMuJS-nyKcvfMxPN-kHp9ExccKPNzJFu9PDUWX2ZEVY',
+          'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjY0Mjk5NDQzLCJleHAiOjE2NjU1OTU0NDMsImp0aSI6ImRmYTM5YjY4LTE4NjEtNGRjOC04MmZhLTc3M2YyZjY0ZThkZSJ9.ASUgkGQpU3ObGE2gy-vnNPy2WS1fZb4b0NsyP7KAiIc',
       },
       error: null,
     },

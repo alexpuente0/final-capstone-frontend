@@ -24,9 +24,9 @@ function SignupPage() {
               {...register('name')}
               id="name"
               name="name"
-              placeholder="Choose a Username"
+              placeholder="Name"
               required
-              minLength="6"
+              minLength="2"
               maxLength="30"
             />
           </div>
@@ -39,7 +39,7 @@ function SignupPage() {
               name="email"
               placeholder="Email"
               required
-              minLength="2"
+              minLength="6"
               maxLength="30"
             />
           </div>

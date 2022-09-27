@@ -22,7 +22,7 @@ describe('Test the AddReservations page', () => {
 
   it('creates one reservation in the reservations table', async () => {
     const store = setupStore(false);
-    const { container } = render(
+    render(
       <Provider store={store}>
         <Router initialEntries={['/reservations/add']}>
           <App url="/" />
@@ -41,7 +41,9 @@ describe('Test the AddReservations page', () => {
       expect(screen.getByRole('heading')).toHaveTextContent(
         'Reservations Page',
       );
-      expect(screen.getAllByText('Monte Chingolo').length).toBeGreaterThan(0);
     });
+    await waitFor(() => {
+      expect(screen.getAllByText('Monte Chingolo').length).toBeGreaterThan(0);
+    }, { options: { timeout: 1000 } });
   });
 });

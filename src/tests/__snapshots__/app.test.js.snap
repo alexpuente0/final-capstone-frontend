@@ -9,21 +9,8 @@ Object {
         class="App"
       >
         <header>
-          <div
-            class="hamburger"
-            id="hamburger"
-            role="presentation"
-          >
-            <div
-              class="slice"
-            />
-          </div>
-          <nav
-            class="invisible"
-          >
-            <ul
-              class="navigator"
-            >
+          <nav>
+            <ul>
               <li>
                 <a
                   aria-current="page"
@@ -77,31 +64,22 @@ Object {
             </ul>
           </nav>
         </header>
+        <h1>
+           
+          Hello,
+           
+          Roberto
+          !
+           
+        </h1>
         <div
-          class="top-margin bground"
+          class="react-multi-carousel-list  carousel-container"
+          dir="ltr"
         >
-          <h1
-            class="header"
-          >
-             
-            Hello,
-            Roberto
-            !
-             
-          </h1>
-          <div
-            class="spinner"
-          >
-            <div
-              class="react-multi-carousel-list  carousel-container"
-              dir="ltr"
-            >
-              <ul
-                class="react-multi-carousel-track "
-                style="transition: none; overflow: unset; transform: translate3d(0px,0,0);"
-              />
-            </div>
-          </div>
+          <ul
+            class="react-multi-carousel-track "
+            style="transition: none; overflow: unset; transform: translate3d(0px,0,0);"
+          />
         </div>
       </div>
     </div>
@@ -111,21 +89,8 @@ Object {
       class="App"
     >
       <header>
-        <div
-          class="hamburger"
-          id="hamburger"
-          role="presentation"
-        >
-          <div
-            class="slice"
-          />
-        </div>
-        <nav
-          class="invisible"
-        >
-          <ul
-            class="navigator"
-          >
+        <nav>
+          <ul>
             <li>
               <a
                 aria-current="page"
@@ -179,31 +144,22 @@ Object {
           </ul>
         </nav>
       </header>
+      <h1>
+         
+        Hello,
+         
+        Roberto
+        !
+         
+      </h1>
       <div
-        class="top-margin bground"
+        class="react-multi-carousel-list  carousel-container"
+        dir="ltr"
       >
-        <h1
-          class="header"
-        >
-           
-          Hello,
-          Roberto
-          !
-           
-        </h1>
-        <div
-          class="spinner"
-        >
-          <div
-            class="react-multi-carousel-list  carousel-container"
-            dir="ltr"
-          >
-            <ul
-              class="react-multi-carousel-track "
-              style="transition: none; overflow: unset; transform: translate3d(0px,0,0);"
-            />
-          </div>
-        </div>
+        <ul
+          class="react-multi-carousel-track "
+          style="transition: none; overflow: unset; transform: translate3d(0px,0,0);"
+        />
       </div>
     </div>
   </div>,
