@@ -37,6 +37,7 @@ function NewItemPage() {
 
   return (
     <div className="formcontainer">
+      <h1>Add Your Green</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor="name">
@@ -86,11 +87,11 @@ function NewItemPage() {
           </label>
         </div>
 
-        <div className="upload">
+        <div>
           <UploadFile setSelectedFile={setSelectedFile} progress={progress} />
         </div>
 
-        <button className="sbutton" type="submit">Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
