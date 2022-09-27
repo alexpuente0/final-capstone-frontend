@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import {
-  fireEvent, render, screen, waitFor,
+    fireEvent, render, screen, waitFor
 } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
@@ -39,7 +39,7 @@ describe('Test the AddReservations page', () => {
 
     await waitFor(() => {
       expect(screen.getByRole('heading')).toHaveTextContent(
-        'Reservations Page',
+        'My Reservations',
       );
     });
     await waitFor(() => {

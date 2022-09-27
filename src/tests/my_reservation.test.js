@@ -15,7 +15,7 @@ describe('Test the MyReservations page', () => {
         </Router>
       </Provider>,
     );
-    expect(screen.getByRole('heading')).toHaveTextContent('Reservations Page');
+    expect(screen.getByRole('heading')).toHaveTextContent('My Reservations');
   });
 
   it('shows one reservation in the reservations table', async () => {
