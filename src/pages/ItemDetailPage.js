@@ -25,35 +25,32 @@ function ItemDetailPage() {
     !!item && (
       <>
         <div className="formcontainer">
-          <h1 className={`${showOn(!item)}`}>No Items</h1>
-          <span className={`${showOn(item)}`}>
-            <h1 className="itemname">{item.name}</h1>
-            <img className="carpic" src={item.photo} alt={item.name} />
-            <div className="txtcontainer">
-              <p>{item.description}</p>
-              <p>
-                Range:
-                {item.range}
-                {item.active}
-              </p>
-            </div>
-            <div className="btncontainer">
-              <button
-                className="sbutton"
-                type="button"
-                onClick={() => navigate(`/reservations/add/${item.id}`)}
-              >
-                Reserve this Car
-              </button>
-              <button
-                type="button"
-                className={`${showOn(authUser)}`}
-                onClick={() => deleteItem(item.id)}
-              >
-                Delete
-              </button>
-            </div>
-          </span>
+          <h1 className="itemname">{item.name}</h1>
+          <img className="carpic" src={item.photo} alt={item.name} />
+          <div className="txtcontainer">
+            <p>{item.description}</p>
+            <p>
+              Range:
+              {item.range}
+              {item.active}
+            </p>
+          </div>
+          <div className="btncontainer">
+            <button
+              className="sbutton"
+              type="button"
+              onClick={() => navigate(`/reservations/add/${item.id}`)}
+            >
+              Reserve this Car
+            </button>
+            <button
+              type="button"
+              className={`${showOn(authUser)}`}
+              onClick={() => deleteItem(item.id)}
+            >
+              Delete
+            </button>
+          </div>
         </div>
       </>
     )

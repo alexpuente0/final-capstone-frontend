@@ -2,27 +2,27 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif; 
+  font-family: 'Roboto', sans-serif;
 }
 
 .App {
   display: flex;
   flex-direction: row;
   align-items: center;
-    background-image: url(./Assets/background.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-image: url(./Assets/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   min-height: 100vh;
 }
 
 .bground {
-    background-image: url(./Assets/background.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh;
-    width: 100vw;
+  background-image: url(./Assets/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 .hidden {
@@ -35,17 +35,24 @@
   background-color: green;
   text-decoration: none;
   list-style: none;
-  height: 100vh;
-  width: 160px;
+  height: 50vh;
   justify-content: space-around;
-  padding: 150px 0 150PX 10px;
+  padding: 100px 15px 15px 15px;
+   position: absolute;
+    z-index: 1;
+    gap: 20px;
+    top: 0;
+    left: 0;
+    width: 200px;
+    border-radius: 0 0 25% 0;
 }
 
 .navigator a {
   text-decoration: none;
   color: white;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 800;
+ filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.90));
 }
 
 .ordered {
@@ -63,24 +70,7 @@
   padding-top: 150px;
 }
 
-  .navigator {
-    position: absolute;
-    background-color: green;
-    display: flex;
-    flex-direction: column;
-    z-index: 1;
-    height: 50vh;
-    gap: 20px;
-    top: 0;
-    left: 0;
-    width: 190px;
-  }
-
-  .navigator a {
-    font-size: 20px;
-  }
-
-  .hamburger {
+.hamburger {
   height: 45px;
   width: 45px;
   display: flex;
@@ -99,17 +89,17 @@
   background-image: url(./Assets/icon.jpg);
   background-size: cover;
   border-radius: 50%;
-filter: drop-shadow(-2px 2px 2px #000000);
+  filter: drop-shadow(-2px 2px 2px #000);
 }
 
 .invisible {
   display: none;
 }
 
-@media screen and (max-width: 390px) { 
-    .navigator {
+@media screen and (max-width: 390px) {
+  .navigator {
     position: absolute;
-    background-color: rgba(0, 128, 0, 0.90);
+    background-color: rgba(0, 128, 0, 0.9);
     display: flex;
     flex-direction: column;
     z-index: 19;
@@ -125,11 +115,11 @@ filter: drop-shadow(-2px 2px 2px #000000);
     font-size: 30px;
   }
 
-.top-margin {
-  padding-top: 60px;
-}
+  .top-margin {
+    padding-top: 60px;
+  }
 
-.spinner {
-  padding-top: 50px;
-}
+  .spinner {
+    padding-top: 50px;
+  }
 }

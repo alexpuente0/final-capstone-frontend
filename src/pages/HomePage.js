@@ -17,7 +17,13 @@ function HomePage() {
   return (
     <div className="top-margin bground">
       {authUser ? (
-        <h1 className="header"> Hello, {authUser.name}! </h1>
+        <h1 className="header">
+          {' '}
+          Hello,
+          {authUser.name}
+          !
+          {' '}
+        </h1>
       ) : (
         <h1 className="header"> Welcome to Rent a Green! </h1>
       )}

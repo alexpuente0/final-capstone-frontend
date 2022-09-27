@@ -91,7 +91,7 @@ function NewItemPage() {
           <UploadFile setSelectedFile={setSelectedFile} progress={progress} />
         </div>
 
-        <button type="submit">Submit</button>
+        <button className="sbutton" type="submit">Submit</button>
       </form>
     </div>
   );
