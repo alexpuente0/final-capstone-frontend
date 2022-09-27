@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { getItems, removeItem } from '../redux/item/itemReducer';
+import './DeleteItemPage.css';
 
 function DeleteItem() {
   const dispatch = useDispatch();
@@ -41,22 +42,20 @@ function DeleteItem() {
   }
 
   return (
-    <>
-      <div className="formcontainer">
-        <h1>Delete a Green</h1>
-        <div className="centered">
-          <form className="myformdel" onSubmit={handleSubmit(onSubmit)}>
-            <div className="form-group">{MySelect()}</div>
-            <div className="button-wrapper">
-              <button className="sbutton" type="submit">
-                Submit
-              </button>
-            &nbsp;
-            </div>
-          </form>
-        </div>
+    <div className="deletecontainer">
+      <h1 className="header">Delete a Green</h1>
+      <div className="centered">
+        <form className="myformdel" onSubmit={handleSubmit(onSubmit)}>
+          <div className="form-group">{MySelect()}</div>
+          <div className="button-wrapper">
+            <button className="sbutton" type="submit">
+              Submit
+            </button>
+              &nbsp;
+          </div>
+        </form>
       </div>
-    </>
+    </div>
   );
 }
 
