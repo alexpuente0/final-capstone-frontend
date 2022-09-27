@@ -45,6 +45,6 @@ describe('Test the ItemDetail page', () => {
     fireEvent.click(screen.getByText('Delete'));
     await waitFor(() => {
       expect(screen.getByRole('heading')).toHaveTextContent('Hello, Roberto');
-    }, { options: { timeout: 4000 } });
+    }, { options: { timeout: 1000 } });
   });
 });

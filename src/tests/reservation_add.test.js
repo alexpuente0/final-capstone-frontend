@@ -41,7 +41,9 @@ describe('Test the AddReservations page', () => {
       expect(screen.getByRole('heading')).toHaveTextContent(
         'Reservations Page',
       );
+    });
+    await waitFor(() => {
       expect(screen.getAllByText('Monte Chingolo').length).toBeGreaterThan(0);
-    }, { options: { timeout: 4000 } });
+    }, { options: { timeout: 1000 } });
   });
 });
