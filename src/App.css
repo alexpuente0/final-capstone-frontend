@@ -5,6 +5,15 @@
   font-family: 'Roboto', sans-serif; 
 }
 
+.bground {
+    background-image: url(./Assets/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+}
+
 .hidden {
   display: none;
 }
@@ -63,16 +72,20 @@
   cursor: pointer;
   left: 24px;
   top: 17px;
-  background-color: aqua;
 }
 
 .slice {
   height: 3px;
   width: 30px;
   background-color: white;
+filter: drop-shadow(-2px 2px 2px #20b36e);
 }
 
 .invisible {
   display: none;
+}
+
+.top-margin {
+  padding-top: 60px;
 }
 }
