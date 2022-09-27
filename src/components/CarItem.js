@@ -35,6 +35,8 @@ const CarItem = (props) => {
     alignItems: 'center',
   };
 
+  const pos = car.description.indexOf('<br>');
+  const description = car.description.substring(0, pos).concat('..');
   return (
     <Card style={cardStyle}>
       <CardActionArea onClick={redirect}>
@@ -47,7 +49,7 @@ const CarItem = (props) => {
             Range:&nbsp;
             {car.range}
           </Typography>
-          <Typography component="p">{car.description}</Typography>
+          <Typography component="p"><>{description}</></Typography>
         </CardContent>
       </CardActionArea>
       {/* <CardActionsContainer car={car} /> */}

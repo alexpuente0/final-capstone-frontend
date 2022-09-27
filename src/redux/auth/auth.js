@@ -71,6 +71,7 @@ export const authReducer = (state = initialState(), action) => {
       return action.payload;
 
     case SIGNUP: {
+      history.navigate('/');
       return action.payload;
     }
 

@@ -35,7 +35,8 @@ const handleResponse = async (res) => {
   }
 
   const json = await res.json();
-  if (json.status?.message?.includes('Logged in sucessfully')) {
+  if (json.status?.message?.includes('Logged in sucessfully')
+      || json.status?.message?.includes('Signed up sucessfully')) {
     const { user } = json;
     user.token = res.headers.get('Authorization').slice(7);
     return user;
