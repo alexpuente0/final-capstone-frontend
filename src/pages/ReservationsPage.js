@@ -19,7 +19,7 @@ function ReservationsPage() {
   return (
     <>
       <div className="reservpage">
-        <h1>Reservations Page</h1>
+        <h1>My Reservations</h1>
         <div className="tablewrapper">
           <ul className="reservtable">
             <li className="listitem">
