@@ -40,51 +40,45 @@ function NewItemPage() {
       <h1>Add Your Green</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label htmlFor="name">
-            Name:
-            <input
-              className="formitem"
-              type="text"
-              {...register('name')}
-              id="name"
-              name="name"
-              required
-              minLength="2"
-              maxLength="30"
-            />
-          </label>
+          <input
+            className="formitem"
+            type="text"
+            {...register('name')}
+            placeholder="Name"
+            id="name"
+            name="name"
+            required
+            minLength="2"
+            maxLength="30"
+          />
         </div>
 
         <div>
-          <label htmlFor="description">
-            Description:
-            <input
-              className="formitem"
-              type="text"
-              {...register('description')}
-              id="description"
-              name="description"
-              required
-              minLength="2"
-              maxLength="200"
-            />
-          </label>
+          <input
+            className="formitem"
+            type="text"
+            {...register('description')}
+            placeholder="Description"
+            id="description"
+            name="description"
+            required
+            minLength="2"
+            maxLength="200"
+          />
         </div>
 
         <div>
-          <label htmlFor="range">
-            Range:
-            <input
-              className="formitem"
-              type="text"
-              {...register('range')}
-              id="range"
-              name="range"
-              required
-              minLength="2"
-              maxLength="200"
-            />
-          </label>
+          <input
+            className="formitem"
+            type="text"
+            {...register('range')}
+            placeholder="Range"
+            id="range"
+            name="range"
+            required
+            minLength="2"
+            maxLength="200"
+          />
         </div>
 
         <div>
