@@ -44,6 +44,7 @@ export const signup = (name, email, password) => async (dispatch) => {
     error: null,
   };
 
+  localStorage.setItem('user', JSON.stringify(payload.user));
   dispatch({ type: SIGNUP, payload });
 };
 
