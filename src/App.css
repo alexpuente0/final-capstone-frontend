@@ -35,7 +35,7 @@
   background-color: rgba(0, 128, 0, 0.85);
   text-decoration: none;
   list-style: none;
-  height: fit-content;
+  height: 55vh;
   padding: 100px 15px 45px 15px;
   position: absolute;
   z-index: 1001;
