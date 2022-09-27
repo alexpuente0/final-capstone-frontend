@@ -1,17 +1,12 @@
 import { Provider } from 'react-redux';
 import {
-  cleanup, render, fireEvent, screen, waitFor,
+  render, fireEvent, screen, waitFor,
 } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
-import {
-  MemoryRouter, Route, Routes,
-} from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import configureStore from '../redux/configureStore';
-import LoginPage from '../pages/LoginPage';
-import ReservationsPage from '../pages/ReservationsPage';
-import ReservationsAddPage from '../pages/ReservationsAddPage';
 import App from '../App';
 
 describe('Navigation', () => {
@@ -35,7 +30,7 @@ describe('Navigation', () => {
 
     await waitFor(() => {
       expect(screen.getByRole('heading')).toHaveTextContent('Add Reservation');
-    }, { options: { timeout: 2000 } });
+    }, { options: { timeout: 4000 } });
 
     const car = screen.getByTestId('item');
     await fireEvent.change(car, { target: { value: 'Genesis GV60' } });
@@ -50,7 +45,7 @@ describe('Navigation', () => {
       expect(screen.getByRole('heading')).toHaveTextContent('Reservations Page');
     }, { options: { timeout: 2000 } });
     await waitFor(() => {
-      expect(document.getElementsByClassName('listitem')).toHaveLength(7);
+      expect(document.getElementsByClassName('listitem')).toHaveLength(2);
     }, { options: { timeout: 2000 } });
   });
 });
