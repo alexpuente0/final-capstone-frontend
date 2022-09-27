@@ -44,7 +44,7 @@ describe('Test the App.test components', () => {
       </Provider>,
     );
     fireEvent.click(screen.getByText('My Reservations'));
-    expect(screen.getByRole('heading')).toHaveTextContent('Reservations Page');
+    expect(screen.getByRole('heading')).toHaveTextContent('My Reservations');
   });
 
   it('shows the Add Reservations when clicking the navbar link', () => {

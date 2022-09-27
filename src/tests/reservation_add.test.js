@@ -37,7 +37,7 @@ describe('Test the AddReservations page', () => {
 
     await waitFor(() => {
       expect(screen.getByRole('heading')).toHaveTextContent(
-        'Reservations Page',
+        'My Reservations',
       );
     });
     await waitFor(() => {
