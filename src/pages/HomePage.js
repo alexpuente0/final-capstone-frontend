@@ -20,6 +20,7 @@ function HomePage() {
         <h1 className="header">
           {' '}
           Hello,
+          {' '}
           {authUser.name}
           !
           {' '}
