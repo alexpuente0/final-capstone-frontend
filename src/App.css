@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif; 
 }
 
 .hidden {
@@ -10,7 +11,7 @@
 
 .navigator {
   display: flex;
-  background-color: greenyellow;
+  background-color: green;
   text-decoration: none;
   padding: 15px;
   list-style: none;
@@ -27,7 +28,17 @@
   width: 100%;
 }
 
+.navigator a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+}
 
+.ordered {
+  display: flex;
+  flex-direction: row;
+}
 
 @media screen and (max-width: 390px) { 
 
@@ -52,6 +63,7 @@
   cursor: pointer;
   left: 24px;
   top: 17px;
+  background-color: aqua;
 }
 
 .slice {

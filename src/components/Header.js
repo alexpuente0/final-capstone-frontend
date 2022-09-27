@@ -5,19 +5,21 @@ import { currentUser, logout } from '../redux/auth/auth';
 import store from '../redux/configureStore';
 import '../App.css';
 
-const doCurrent = () => {
-  store.dispatch(currentUser());
-};
-
-const doLogout = () => {
-  store.dispatch(logout());
-};
-
 const Header = () => {
   const authUser = useSelector((state) => state.auth.user);
   const [navbar, setNavbar] = React.useState('invisible');
 
   const handleHamburgerClick = () => {
+    setNavbar(navbar === 'invisible' ? '' : 'invisible');
+  };
+
+  const doCurrent = () => {
+    store.dispatch(currentUser());
+    setNavbar(navbar === 'invisible' ? '' : 'invisible');
+  };
+
+  const doLogout = () => {
+    store.dispatch(logout());
     setNavbar(navbar === 'invisible' ? '' : 'invisible');
   };
 
