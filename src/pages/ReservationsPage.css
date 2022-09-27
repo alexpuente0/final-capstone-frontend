@@ -1,3 +1,10 @@
+.reservpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
 .reservtable {
   margin: 10px;
@@ -11,18 +18,18 @@
   justify-content: space-between;
 }
 
-.listitem:nth-child(odd) {
+.listitem:nth-child(even) {
   background-color: white;
 }
 
-.listitem:nth-child(even) {
-  background-color: rgb(184, 182, 202);
+.listitem:nth-child(odd) {
+  background-color: #5f942b7c;
 }
 
 .listitem:nth-child(1) {
   border-radius: 5px;
   border: 0;
-  background-color: rgb(148, 146, 163);
+  background-color: #07ae81;
   font-weight: bold;
 }
 
@@ -35,6 +42,7 @@
   border: 1px solid black;
   border-radius: 5px;
   margin: 10px;
+  width: 90%;
 }
 
 .spancentered {
@@ -53,6 +61,5 @@
 @media only screen and (min-width: 800px) {
   .tablewrapper {
     width: 70%;
-    margin-left: 15%;
   }
 }

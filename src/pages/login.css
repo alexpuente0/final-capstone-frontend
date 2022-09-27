@@ -16,6 +16,7 @@ body {
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
+  filter: drop-shadow(-2px 2px 2px #000);
 }
 
 .button-wrapper {

@@ -3,6 +3,7 @@ import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import CarItem from './CarItem';
+import '../App.css';
 
 const responsive = {
   superLargeDesktop: {
@@ -31,15 +32,17 @@ const CarList = (props) => {
   const { cars } = props;
 
   return (
-    <Carousel
-      responsive={responsive}
-      className="carousel-container"
-      infinite
-    >
-      {cars.map((car) => (
-        <CarItem key={car.id} car={car} />
-      ))}
-    </Carousel>
+    <div className="spinner">
+      <Carousel
+        responsive={responsive}
+        className="carousel-container"
+        infinite
+      >
+        {cars.map((car) => (
+          <CarItem key={car.id} car={car} />
+        ))}
+      </Carousel>
+    </div>
   );
 };
 

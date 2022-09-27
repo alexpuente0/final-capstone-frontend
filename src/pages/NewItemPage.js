@@ -7,6 +7,7 @@ import UploadFile from '../components/UploadFile';
 import { fileName, UploadImage } from '../helpers/uploadImage';
 import { addItem } from '../redux/item/itemReducer';
 import history from '../helpers/history';
+import './NewItemPage.css';
 
 function NewItemPage() {
   const dispatch = useDispatch();
@@ -35,61 +36,58 @@ function NewItemPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label htmlFor="name">
-          Name:
+    <div className="formcontainer">
+      <h1>Add Your Green</h1>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div>
           <input
             className="formitem"
             type="text"
             {...register('name')}
+            placeholder="Name"
             id="name"
             name="name"
             required
             minLength="2"
             maxLength="30"
           />
-        </label>
-      </div>
+        </div>
 
-      <div>
-        <label htmlFor="description">
-          Description:
+        <div>
           <input
             className="formitem"
             type="text"
             {...register('description')}
+            placeholder="Description"
             id="description"
             name="description"
             required
             minLength="2"
             maxLength="200"
           />
-        </label>
-      </div>
+        </div>
 
-      <div>
-        <label htmlFor="range">
-          Range:
+        <div>
           <input
             className="formitem"
             type="text"
             {...register('range')}
+            placeholder="Range"
             id="range"
             name="range"
             required
             minLength="2"
             maxLength="200"
           />
-        </label>
-      </div>
+        </div>
 
-      <div>
-        <UploadFile setSelectedFile={setSelectedFile} progress={progress} />
-      </div>
+        <div>
+          <UploadFile setSelectedFile={setSelectedFile} progress={progress} />
+        </div>
 
-      <button type="submit">Submit</button>
-    </form>
+        <button className="sbutton" type="submit">Submit</button>
+      </form>
+    </div>
   );
 }
 

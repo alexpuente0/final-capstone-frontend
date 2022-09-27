@@ -1,0 +1,19 @@
+.formcontainer {
+  padding: 10px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.formcontainer form {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(0, 255, 34, 0.13);
+  filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.9));
+}

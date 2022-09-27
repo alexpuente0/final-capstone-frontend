@@ -18,22 +18,24 @@ function ReservationsPage() {
 
   return (
     <>
-      <h1>Reservations Page</h1>
-      <div className="tablewrapper">
-        <ul className="reservtable">
-          <li className="listitem">
-            <span className="fixedwidth">Car</span>
-            <span className="spancentered">City</span>
-            <span className="spancentered">Date</span>
-          </li>
-          {myreserv.map((reservation) => (
-            <li key={reservation.id} className="listitem">
-              <span className="fixedwidth">{reservation.carname}</span>
-              <span className="spancentered">{reservation.city}</span>
-              <span className="spancentered smallfont">{reservation.date}</span>
+      <div className="reservpage">
+        <h1>My Reservations</h1>
+        <div className="tablewrapper">
+          <ul className="reservtable">
+            <li className="listitem">
+              <span className="fixedwidth">Car</span>
+              <span className="spancentered">City</span>
+              <span className="spancentered">Date</span>
             </li>
-          ))}
-        </ul>
+            {myreserv.map((reservation) => (
+              <li key={reservation.id} className="listitem">
+                <span className="fixedwidth">{reservation.carname}</span>
+                <span className="spancentered">{reservation.city}</span>
+                <span className="spancentered smallfont">{reservation.date}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </>
   );

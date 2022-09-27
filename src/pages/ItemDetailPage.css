@@ -1,0 +1,27 @@
+.txtcontainer {
+  background-color: rgba(0, 255, 34, 0.13);
+  padding: 25px;
+  text-align: justify;
+  margin: 10px;
+}
+
+.itemname {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.carpic {
+  display: flex;
+  width: 90%;
+  height: 90%;
+  justify-content: center;
+  margin: 0 auto 25px auto;
+}
+
+.btncontainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}

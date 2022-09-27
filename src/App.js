@@ -31,7 +31,6 @@ function App() {
         <Route path="/reservations/add" element={<PrivateRoute><ReservationsAddPage /></PrivateRoute>} />
         <Route path="/reservations/add/:id" element={<PrivateRoute><ReservationsAddPage /></PrivateRoute>} />
         <Route path="/delete" element={<PrivateRoute><DeleteItemPage /></PrivateRoute>} />
-        {/* <Route path="/" element={<ItemsDeletePage />} /> */}
       </Routes>
     </div>
   );
