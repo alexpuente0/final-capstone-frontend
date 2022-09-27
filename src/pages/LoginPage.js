@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import history from '../helpers/history';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { login } from '../redux/auth/auth';
 import './login.css';
 
@@ -13,13 +13,16 @@ function LoginPage() {
   const authUser = useSelector((state) => state.auth.user);
   const authError = useSelector((state) => state.auth.error);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   useEffect(() => {
     // redirect to from if already logged in
     if (authUser) {
-      const { from } = history.location.state || { from: { pathname: '/' } };
-      history.navigate(from);
+      const { from } = location.state || { from: { pathname: '/' } };
+      navigate(from.pathname);
     }
-  }, [authUser]);
+  }, [authUser, location.state, navigate]);
 
   function onSubmit({ email, password }) {
     return dispatch(login(email, password));
