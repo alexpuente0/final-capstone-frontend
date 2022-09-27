@@ -1,3 +1,10 @@
+.reservpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
 .reservtable {
   margin: 10px;
@@ -35,6 +42,7 @@
   border: 1px solid black;
   border-radius: 5px;
   margin: 10px;
+  width: 90%;
 }
 
 .spancentered {
@@ -50,9 +58,8 @@
   font-size: 0.875rem;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 800px) { 
   .tablewrapper {
     width: 70%;
-    margin-left: 15%;
   }
 }
