@@ -18,7 +18,7 @@
   justify-content: space-between;
 }
 
-.listitem:nth-child(odd) {
+.listitem:nth-child(even) {
   background-color: white;
 }
 
