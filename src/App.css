@@ -98,7 +98,6 @@
 @media only screen and (max-width: 400px) {
   .navigator {
     position: absolute;
-    background-color: red);
     display: flex;
     flex-direction: column;
     z-index: 1001;
@@ -109,12 +108,14 @@
     width: 100%;
     align-items: center;
   }
-
-  .top-margin {
-    padding-top: 60px;
-  }
-
+  
   .spinner {
     padding-top: 50px;
+  }
+
+  .header {
+    display: flex;
+    padding-top: 80px;
+    justify-content: center;
   }
 }

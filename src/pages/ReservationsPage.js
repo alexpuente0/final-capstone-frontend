@@ -17,9 +17,9 @@ function ReservationsPage() {
   });
 
   return (
-    <div className='reservcontainer'>
+    <div className="reservcontainer">
       <div className="reservpage">
-        <h1 className='header'>My Reservations</h1>
+        <h1 className="header">My Reservations</h1>
         <div className="tablewrapper">
           <ul className="reservtable">
             <li className="listitem">

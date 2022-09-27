@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 10px 10px 10px;
   background-color: rgba(62, 236, 62, 0.514);
   min-height: 100vh;
   width: 100vw;
