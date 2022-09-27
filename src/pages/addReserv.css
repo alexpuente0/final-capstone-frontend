@@ -1,7 +1,11 @@
 .addreservpage {
-  padding: 10px;
-  background-color: rgb(62, 236, 62);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 10px 10px 10px;
+  background-color: rgba(62, 236, 62, 0.514);
   min-height: 100vh;
+  width: 100vw;
   background-image: url('../img/mercedes.jpg');
   background-size: cover;
 }
