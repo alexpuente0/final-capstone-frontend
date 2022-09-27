@@ -24,7 +24,7 @@ function SignupPage() {
               {...register('name')}
               id="name"
               name="name"
-              placeholder="Choose a Username"
+              placeholder="Name"
               required
               minLength="2"
               maxLength="30"
