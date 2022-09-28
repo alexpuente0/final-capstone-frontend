@@ -46,6 +46,11 @@
   border-radius: 0 0 25% 0;
 }
 
+.navigator li :hover {
+  color: #61e0be;
+  filter: drop-shadow(-3px 3px 1px rgb(40, 71, 52));
+}
+
 .navigator a {
   text-decoration: none;
   color: white;
