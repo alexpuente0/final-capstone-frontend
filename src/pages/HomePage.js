@@ -18,7 +18,6 @@ function HomePage() {
     <div className="top-margin bground">
       {authUser ? (
         <h1 className="header">
-          {' '}
           Hello,
           {' '}
           {authUser.name}

@@ -36,57 +36,61 @@ function NewItemPage() {
   };
 
   return (
-    <div className="formcontainer">
-      <h1>Add Your Green</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <input
-            className="formitem"
-            type="text"
-            {...register('name')}
-            placeholder="Name"
-            id="name"
-            name="name"
-            required
-            minLength="2"
-            maxLength="30"
-          />
-        </div>
+    <div className="addcontainer">
+      <h1 className="header">Add Your Green</h1>
+      <div className="centered">
+        <form className="myformadd" onSubmit={handleSubmit(onSubmit)}>
 
-        <div>
-          <input
-            className="formitem"
-            type="text"
-            {...register('description')}
-            placeholder="Description"
-            id="description"
-            name="description"
-            required
-            minLength="2"
-            maxLength="200"
-          />
-        </div>
+          <div>
+            <input
+              className="formitem"
+              type="text"
+              {...register('name')}
+              placeholder="Name"
+              id="name"
+              name="name"
+              required
+              minLength="2"
+              maxLength="30"
+            />
+          </div>
 
-        <div>
-          <input
-            className="formitem"
-            type="text"
-            {...register('range')}
-            placeholder="Range"
-            id="range"
-            name="range"
-            required
-            minLength="2"
-            maxLength="200"
-          />
-        </div>
+          <div>
+            <input
+              className="formitem"
+              type="text"
+              {...register('description')}
+              placeholder="Description"
+              id="description"
+              name="description"
+              required
+              minLength="2"
+              maxLength="200"
+            />
+          </div>
 
-        <div>
-          <UploadFile setSelectedFile={setSelectedFile} progress={progress} />
-        </div>
+          <div>
+            <input
+              className="formitem"
+              type="text"
+              {...register('range')}
+              placeholder="Range"
+              id="range"
+              name="range"
+              required
+              minLength="2"
+              maxLength="200"
+            />
+          </div>
 
-        <button className="sbutton" type="submit">Submit</button>
-      </form>
+          <div>
+            <UploadFile setSelectedFile={setSelectedFile} progress={progress} />
+          </div>
+
+          <button className="sbutton" type="submit">Submit</button>
+
+        </form>
+      </div>
     </div>
   );
 }

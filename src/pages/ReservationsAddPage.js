@@ -46,7 +46,7 @@ function ReservationsAddPage() {
 
   return (
     <div className="addreservpage">
-      <h1>Add Reservation</h1>
+      <h1 className="header">Add Reservation</h1>
       <div className="centered">
         <form className="myform2" onSubmit={handleSubmit(onSubmit)}>
           <div className="form-group">
