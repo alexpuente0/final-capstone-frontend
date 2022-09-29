@@ -1,38 +1,113 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-image: url(./Assets/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   min-height: 100vh;
+}
+
+.bground {
+  background-image: url(./Assets/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.hidden {
+  display: none;
+}
+
+.navigator {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: rgba(0, 128, 0, 0.85);
+  text-decoration: none;
+  list-style: none;
+  height: 100vh;
+  padding: 100px 15px 45px 15px;
+  position: absolute;
+  z-index: 1001;
+  gap: 30px;
+  top: 0;
+  left: 0;
+  width: 200px;
+  border-radius: 0 10% 10% 0;
+}
+
+.navigator li :hover {
+  color: #61e0be;
+  filter: drop-shadow(-3px 3px 1px rgb(40, 71, 52));
+}
+
+.navigator a {
+  text-decoration: none;
   color: white;
+  font-size: 20px;
+  font-weight: 800;
+  filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.9));
 }
 
-.App-link {
-  color: #61dafb;
+.ordered {
+  display: flex;
+  flex-direction: row;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.header {
+  display: flex;
+  padding-top: 60px;
+  justify-content: center;
+}
+
+.spinner {
+  padding-top: 50px;
+}
+
+.hamburger {
+  height: 45px;
+  width: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 1002;
+  cursor: pointer;
+  left: 25px;
+  top: 25px;
+}
+
+.slice {
+  height: 40px;
+  width: 40px;
+  background-image: url(./Assets/icon.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  filter: drop-shadow(-2px 2px 2px #000);
+}
+
+.invisible {
+  display: none;
+}
+
+@media only screen and (max-width: 400px) {
+  .spinner {
+    padding-top: 50px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .header {
+    display: flex;
+    padding-top: 80px;
+    justify-content: center;
   }
 }

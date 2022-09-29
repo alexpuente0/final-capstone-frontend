@@ -1,0 +1,79 @@
+.reservcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px 10px 10px;
+  min-height: 100vh;
+  width: 100vw;
+  background-size: cover;
+}
+
+.reservpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.reservtable {
+  margin: 10px;
+  padding: 0;
+}
+
+.listitem {
+  padding: 5px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.listitem:nth-child(even) {
+  background-color: white;
+}
+
+.listitem:nth-child(odd) {
+  background-color: #5f942b7c;
+}
+
+.listitem:nth-child(1) {
+  border-radius: 5px;
+  border: 0;
+  background-color: #07ae81;
+  font-weight: bold;
+}
+
+.listitem:last-child {
+  border-radius: 5px;
+  border: 0;
+}
+
+.tablewrapper {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  width: 90%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spancentered {
+  text-align: center;
+  width: 30%;
+}
+
+.fixedwidth {
+  width: 30%;
+}
+
+.smallfont {
+  font-size: 0.875rem;
+}
+
+@media only screen and (min-width: 800px) {
+  .tablewrapper {
+    width: 70%;
+  }
+}

@@ -1,0 +1,16 @@
+.deletecontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px 10px 10px;
+  min-height: 100vh;
+  width: 100vw;
+  background-size: cover;
+}
+
+.myformdel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 255, 34, 0.13);
+}
