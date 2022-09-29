@@ -19,6 +19,19 @@ This front-end application is complemented by the [back-end API](https://github.
 
 [Live Demo Link](https://alexpuente0.github.io/final-capstone-frontend/)
 
+### Kanban Board
+[Kanban board link](https://github.com/users/alexpuente0/projects/4).
+
+#### Initial Kanban board screenshot:
+![image](https://user-images.githubusercontent.com/99830261/190246424-1644dd8b-a0c9-45d5-b794-06fa6666a8e4.png)
+
+#### Final number of team members:
+
+We are 3 people on the team:
+@rbanos-mv
+@acolombo1
+@alexpuente0
+
 ### Getting Started
 
 To get a local copy up and running follow these simple steps:
