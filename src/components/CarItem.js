@@ -34,8 +34,8 @@ const CarItem = (props) => {
     alignItems: 'center',
   };
 
-  const pos = car.description.indexOf('<br>');
-  const description = car.description.substring(0, pos).concat('..');
+  const pos = Math.max(car.description.indexOf('<br>'), 180);
+  const description = car.description.substring(0, pos).concat('...');
   return (
     <Card style={cardStyle}>
       <CardActionArea onClick={redirect}>
