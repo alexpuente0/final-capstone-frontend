@@ -6,6 +6,8 @@
 
 This front-end application is complemented by the [back-end API](https://github.com/acolombo1/final-capstone-back-end)
 
+![image](https://user-images.githubusercontent.com/100373071/193011362-40c6d5a0-e798-4590-9b30-ca780f309502.png)
+
 ## Built With
 
 - JavaScript-ES6
@@ -15,7 +17,7 @@ This front-end application is complemented by the [back-end API](https://github.
 
 ## Live Demo
 
-[GitHub Live Demo Link](https://alexpuente0.github.io/final-capstone-frontend/)
+[Live Demo Link](https://alexpuente0.github.io/final-capstone-frontend/)
 
 ### Getting Started
 
