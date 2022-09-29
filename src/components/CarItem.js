@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-// import CardActionsContainer from './CardActions';
 
 const CarItem = (props) => {
   const { car } = props;
@@ -52,7 +51,6 @@ const CarItem = (props) => {
           <Typography component="p"><>{description}</></Typography>
         </CardContent>
       </CardActionArea>
-      {/* <CardActionsContainer car={car} /> */}
     </Card>
   );
 };
